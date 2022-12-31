@@ -1,0 +1,42 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<display-name>AdminServlet</display-name>
+		<description></description>
+		<servlet-class>com.webapp.business_card.servlets.AdminServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AuthnServlet</servlet-name>
+		<display-name>AuthnServlet</display-name>
+		<description></description>
+		<servlet-class>com.webapp.business_card.servlets.AuthnServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CallOrderServlet</servlet-name>
+		<display-name>CallOrderServlet</display-name>
+		<description></description>
+		<servlet-class>com.webapp.business_card.servlets.CallOrderServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PageServlet</servlet-name>
+		<display-name>PageServlet</display-name>
+		<description></description>
+		<servlet-class>com.webapp.business_card.servlets.PageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>servlet</servlet-name>
+		<display-name>servlet</display-name>
+		<description></description>
+		<servlet-class>com.webapp.business_card.servlets.servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>servlet</servlet-name>
+		<url-pattern>/servlet</url-pattern>
+	</servlet-mapping>
+  
+  
+</web-app>

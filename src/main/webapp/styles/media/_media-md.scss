@@ -1,0 +1,88 @@
+@import "../helpers/variables";
+
+@media (min-width: 768px) {
+  .hero-header {
+    align-items: flex-start;
+    h1 {
+      max-width: 480px;
+    }
+    p {
+      max-width: 380px;
+    }
+    button {
+      width: 170px;
+    }
+  }
+
+  .tabs-container {
+    padding: 0px 30px 20px;
+  }
+
+  .tabs {
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .carousel-item {
+    &:nth-child(n) {
+      .card {
+        max-width: 48.5%;
+      }
+    }
+  }
+
+  .carousel-item {
+    &:nth-child(1) {
+      .card {
+        &:nth-child(2) {
+          display: flex;
+        }
+      }
+    }
+    &:nth-child(2) {
+      .card {
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(1),
+        &:nth-child(3) {
+          display: flex;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .card {
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(1),
+        &:nth-child(3) {
+          display: flex;
+        }
+      }
+    }
+    &:nth-child(4) {
+      .card {
+        &:nth-child(1) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .question-section {
+    flex-direction: row;
+    justify-content: space-around;
+    .get-started-button {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+@import url("../fonts/Gilroy/stylesheet.css");
+@import url("../fonts/BN-Chester/stylesheet.css");
+@import "./helpers/variables";
+
+@import "./media/media-xs";
+@import "./media/media-sm";
+@import "./media/media-md";
+@import "./media/media-lg";
+@import "./media/media-xl";
+
+// General
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy";
+  user-select: none;
+}
+
+p,
+a {
+  font-weight: 500;
+  color: $main-black;
+}
+
+p {
+  line-height: 170%;
+}
+
+a {
+  color: $main-black !important;
+}
+
+body {
+  background-color: $body-background-color !important;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-orange;
+    border-radius: 10px;
+  }
+}
+
+// Navbar
+.navbar {
+  background-color: transparent;
+  span {
+    display: block;
+    width: 100%;
+    background-color: $main-black;
+    height: 3px;
+    position: absolute;
+    border-radius: 20px;
+    &:nth-child(1) {
+      width: 60%;
+      top: 0;
+      right: 0;
+    }
+    &:nth-child(2) {
+      top: calc(50% - 2px);
+    }
+    &:nth-child(3) {
+      width: 60%;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.hamburger-container {
+  width: 35px;
+  height: 25px;
+  position: relative;
+}
+
+.navbar-brand {
+  img {
+    display: block;
+  }
+}
+
+// Main
+.hero-header {
+  background-color: $main-white;
+}
+
+.get-started-button {
+  background-color: transparent;
+  border: $button-border;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+// Our Services
+
+.our-services-section {
+  background-color: $main-white;
+}
+
+.services-card-container {
+  .card {
+    border: none;
+  }
+}
+
+.card-img-container {
+  width: 90px;
+  height: 90px;
+}
+
+.service-description {
+  color: $service-description-color;
+  line-height: 170%;
+}
+
+.free-consultation-button {
+  background-color: transparent;
+  border: $button-border;
+}
+
+// Our Pricing
+
+.our-pricing-section {
+  background-color: $main-white;
+  .card {
+    background-color: $pricing-card-color;
+    border-radius: 10px;
+    .card-body {
+      padding: 0 !important;
+    }
+
+    .card-body > span {
+      display: block;
+      height: 1px;
+      width: 68%;
+      background-color: $splitting-line-color;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        line-height: 180%;
+        color: $main-black;
+        font-weight: 500;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  .active {
+    background-color: $main-orange !important;
+    .pricing-type,
+    .price,
+    .per-month {
+      color: $main-white !important;
+    }
+    .card-body > span {
+      background-color: $main-white !important;
+    }
+
+    ul {
+      li {
+        color: $main-white !important;
+      }
+    }
+
+    button {
+      border-top: 1px solid $main-white;
+    }
+  }
+}
+
+.pricing-type,
+.price,
+.per-month {
+  font-weight: 400;
+  font-family: "BN Chester";
+  color: $main-black;
+}
+
+// What People Say
+
+.what-people-say-section {
+  flex-direction: column;
+}
+
+.carousel {
+  width: 100%;
+  .card {
+    border: none;
+  }
+  .card-body {
+    flex-direction: column;
+  }
+}
+
+.testimonials-owner > img {
+  border-radius: 50%;
+}
+
+
+.owner-info {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.owner-info > span {
+  width: 100%;
+  height: 1px;
+  background-color: $splitting-line-color;
+}
+
+.name {
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 0;
+}
+
+.social {
+  justify-content: space-between;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      display: block;
+    }
+    text-decoration: none;
+  }
+}
+
+.carousel-indicators {
+  max-width: 120px;
+  margin: auto !important;
+  bottom: 5% !important;
+  button {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50%;
+    background-color: $carousel-indicators-color !important;
+    opacity: 1 !important;
+  }
+
+  .active {
+    background-color: $main-orange !important;
+  }
+}
+
+.logo {
+  max-width: 140px;
+  display: block;
+}
