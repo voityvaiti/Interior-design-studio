@@ -25,14 +25,13 @@ public class CodeDao {
 	
 	public String getCode() throws SQLException {
 		ResultSet resultSet = connection.createStatement().executeQuery("SELECT code FROM admin_code WHERE id=1");
-		System.out.println(connection);
 		resultSet.next();
 		return resultSet.getString("code");
 	}
 	
-	public void setCode(String code) throws SQLException {
+	public void updateCode(String code) throws SQLException {
 		PreparedStatement preparedStatement = 
-				connection.prepareStatement("INSERT INTO admin_code (code) VALUES (?)");
+				connection.prepareStatement("UPDATE admin_code SET code=? WHERE id=1");
 		preparedStatement.setString(1, code);
 		preparedStatement.executeUpdate();
 	}
