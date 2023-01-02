@@ -1,5 +1,6 @@
-# Interior-design-studio 
-Webapp, realising functions of Business card site:
+# Interior-Design-Studio 
+Web App, realising functions of Business card site:
+
 ### Backend 
 - Admin panel with single code authorization and ability to change it
 - Authorization code encryption
@@ -13,12 +14,11 @@ Webapp, realising functions of Business card site:
 - MySQL
 
 ### Frontend(by [DmitriyTruten](https://github.com/DmitriyTruten)):
-- Adaptability
+- Adaptive/Semantic layout
 - Animations
-
 
 ###### Technology stack:
 - HTML
-- CSS
-- SCSS
+- CSS/SCSS
+- Bootstrap
 - JavaScript
