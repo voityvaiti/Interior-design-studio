@@ -196,7 +196,7 @@
     font-weight: 700;
     color: #fff;
   }
-  .what-people-say-section .section-header {
+  .testimonials-section .section-header {
     margin: 60px 0px;
   }
   .testimonials-owner {
@@ -317,16 +317,14 @@
 .navigation {
     display: none;
   }
-  .navigation > a {
+  .navigation > p {
     font-size: 14px;
     margin: 24px 0px 0px;
     text-decoration: none;
+    cursor: pointer;
   }
-  .navigation > a:nth-child(1) {
-    font-weight: 600;
+  .navigation > p:nth-child(1) {
     font-size: 16px;
-  }
-  .navigation > p {
     font-weight: 600;
     margin: 0;
   }
@@ -501,10 +499,11 @@
     justify-content: space-between;
     align-items: center;
   }
-  .inner-navbar a {
+  .header-link {
     display: block;
     text-decoration: none;
     color: #352c2c;
+    cursor: pointer;
   }
   .header-right-section {
     display: flex;
@@ -683,7 +682,7 @@
   .gallery > div:nth-child(n) {
     justify-content: center;
   }
-  .what-people-say-section .section-header {
+  .testimonials-section .section-header {
     margin: 60px 0px 90px;
   }
   .name {
@@ -866,7 +865,7 @@ body::-webkit-scrollbar-thumb {
   color: #161616;
 }
 
-.what-people-say-section {
+.testimonials-section {
   flex-direction: column;
 }
 
@@ -934,4 +933,46 @@ body::-webkit-scrollbar-thumb {
 .logo {
   max-width: 140px;
   display: block;
+}
+
+@-webkit-keyframes pulsating-effect-on {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px #d3a265;
+  }
+}
+
+@keyframes pulsating-effect-on {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px #d3a265;
+  }
+}
+@-webkit-keyframes pulsating-effect-off {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px #d3a265;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
+}
+@keyframes pulsating-effect-off {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px #d3a265;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
 }/*# sourceMappingURL=main.css.map */

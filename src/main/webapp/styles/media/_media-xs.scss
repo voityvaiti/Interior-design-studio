@@ -221,7 +221,7 @@
     color: $main-white;
   }
 
-  .what-people-say-section {
+  .testimonials-section {
     .section-header {
       margin: 60px 0px;
     }
@@ -375,19 +375,16 @@
     display: none;
   }
 
-  .navigation > a {
+  .navigation > p {
+    &:nth-child(1) {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
     font-size: 14px;
     margin: 24px 0px 0px;
     text-decoration: none;
-    &:nth-child(1) {
-      font-weight: 600;
-      font-size: 16px;
-    }
-  }
-
-  .navigation > p {
-    font-weight: 600;
-    margin: 0;
+    cursor: pointer;
   }
 
   .address,

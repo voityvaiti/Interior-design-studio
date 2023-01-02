@@ -14,11 +14,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    a {
-      display: block;
-      text-decoration: none;
-      color: $header-link-color;
-    }
+  }
+
+  .header-link {
+    display: block;
+    text-decoration: none;
+    color: $header-link-color;
+    cursor: pointer;
   }
 
   .header-right-section {

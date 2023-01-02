@@ -185,9 +185,9 @@ body {
   color: $main-black;
 }
 
-// What People Say
+// Testimonials
 
-.what-people-say-section {
+.testimonials-section {
   flex-direction: column;
 }
 
@@ -204,7 +204,6 @@ body {
 .testimonials-owner > img {
   border-radius: 50%;
 }
-
 
 .owner-info {
   flex-direction: column;
@@ -257,4 +256,30 @@ body {
 .logo {
   max-width: 140px;
   display: block;
+}
+
+// Animations
+
+@keyframes pulsating-effect-on {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
+
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px $main-orange;
+  }
+}
+
+@keyframes pulsating-effect-off {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px $main-orange;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px transparent;
+  }
 }
