@@ -1,6 +1,7 @@
 package com.webapp.business_card.servlets;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,9 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.webapp.business_card.dao.CallDao;
-import com.webapp.business_card.dao.CodeDao;
 import com.webapp.business_card.models.Call;
 import com.webapp.business_card.security.PageSecurity;
 
