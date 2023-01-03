@@ -23,29 +23,6 @@ public class CodeChangeServlet extends HttpServlet {
 	public CodeChangeServlet() {
 		super();
 	}
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		CodeDao codeDao = CodeDao.getInstance();
-//		try {
-//			if (request.getSession().getAttribute("code") != null
-//					&& ((String) request.getSession().getAttribute("code")).equalsIgnoreCase(codeDao.getCode())) {
-//				request.getRequestDispatcher("WEB-INF/view/codeChange.jsp").forward(request, response);
-//			} else
-//				response.sendRedirect("/Interior-Design-Studio/authn");
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		try {
-//			if (new PageSecurity().isSecure(request)) {
-//				request.getRequestDispatcher("WEB-INF/view/codeChange.jsp").forward(request, response);
-//			} else
-//				response.sendRedirect("/Interior-Design-Studio/authn");
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
