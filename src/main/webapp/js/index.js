@@ -1,24 +1,17 @@
-const mainButtons = document.querySelectorAll(".main-btn");
+import { heroHeaderReveal } from "./animations/heroHeader.js";
+import { glowOfMainButtons } from "./animations/mainButtons.js";
+
 const links = document.querySelectorAll(".navigation-link");
 
-mainButtons.forEach((button) => {
-  button.addEventListener("mouseover", (event) => {
-    event.target.classList.remove("pulsating-effect-off");
-    event.target.classList.add("pulsating-effect-on");
-    event.target.style.animation =
-      "pulsating-effect-on .5s ease-in-out forwards";
-  });
-  button.addEventListener("mouseout", (event) => {
-    event.target.classList.remove("pulsating-effect-on");
-    event.target.classList.add("pulsating-effect-off");
-    event.target.style.animation =
-      "pulsating-effect-off .5s ease-in-out forwards";
-  });
-});
+heroHeaderReveal()
+glowOfMainButtons()
 
+// Adding event listeners for each link
 links.forEach((link) => {
   link.addEventListener("click", (event) => {
+    // Declaring a variable that will contain selected section
     let selectedSection;
+    // Assigning selected section depending on id of clicked link
     switch (event.target.id) {
       case "about":
         selectedSection = document.querySelector(".about-studio-section");
@@ -36,6 +29,7 @@ links.forEach((link) => {
         selectedSection = document.querySelector(".testimonials-section");
         break;
     }
+    // Scrolling into selected section
     selectedSection.scrollIntoView({ block: "center", behavior: "smooth" });
   });
 });

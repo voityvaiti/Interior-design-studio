@@ -779,6 +779,11 @@ body::-webkit-scrollbar-thumb {
 .hero-header {
   background-color: #fff;
 }
+.hero-header h1,
+.hero-header p,
+.hero-header button {
+  opacity: 0;
+}
 
 .get-started-button {
   background-color: transparent;
@@ -935,6 +940,23 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 
+@-webkit-keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @-webkit-keyframes pulsating-effect-on {
   0% {
     transform: scale(1);
@@ -945,7 +967,6 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0px 0px 10px 2px #d3a265;
   }
 }
-
 @keyframes pulsating-effect-on {
   0% {
     transform: scale(1);

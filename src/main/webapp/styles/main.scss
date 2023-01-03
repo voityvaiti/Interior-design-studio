@@ -86,6 +86,11 @@ body {
 // Main
 .hero-header {
   background-color: $main-white;
+  h1,
+  p,
+  button {
+    opacity: 0;
+  }
 }
 
 .get-started-button {
@@ -259,6 +264,15 @@ body {
 }
 
 // Animations
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes pulsating-effect-on {
   0% {
