@@ -106,8 +106,11 @@
   .free-consultation-button {
     display: none;
   }
+  .our-portfolio-section {
+    padding-top: 65px;
+  }
   .our-portfolio-section .section-header {
-    margin: 65px 0px;
+    margin-bottom: 65px;
   }
   .tabs-container {
     padding: 0px 30px 50px !important;
@@ -529,6 +532,7 @@
     font-size: 40px;
   }
   .about-studio-row {
+    width: 100%;
     margin: 70px 135px !important;
   }
   .about-studio-row p {
@@ -544,7 +548,7 @@
     display: none;
   }
   .our-services-section {
-    padding: 0px 135px;
+    padding: 50px 135px;
   }
   .tabs-container {
     padding: 0px 135px 20px !important;
@@ -661,6 +665,9 @@
   .hero-header h1 {
     font-size: 66px;
   }
+  .our-services-section {
+    padding: 0px 135px;
+  }
   .our-services-section h2 {
     margin: 85px 0px;
   }
@@ -676,8 +683,11 @@
     height: 48px;
     margin: 85px 0px;
   }
+  .our-portfolio-section {
+    padding-top: 85px;
+  }
   .our-portfolio-section .section-header {
-    margin: 85px 0px;
+    margin-bottom: 85px;
   }
   .gallery > div:nth-child(n) {
     justify-content: center;
@@ -770,10 +780,54 @@ body::-webkit-scrollbar-thumb {
   width: 35px;
   height: 25px;
   position: relative;
+  opacity: 0;
 }
 
 .navbar-brand img {
   display: block;
+  opacity: 0;
+}
+
+.sidenav-back-panel {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.sidenav {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.6s;
+  z-index: 10;
+  padding-top: 100px;
+}
+.sidenav .navigation {
+  text-align: end;
+  display: block;
+}
+.sidenav .navigation p {
+  font-weight: 600;
+  font-size: 30px;
+  -webkit-text-decoration: solid underline 2px #d3a265;
+  -ms-text-decoration: solid underline 2px #d3a265;
+  -o-text-decoration: solid underline 2px #d3a265;
+  text-decoration: solid underline 2px #d3a265;
+  -webkit-text-underline-offset: 8px;
+  -moz-text-underline-offset: 8px;
+  -ms-text-underline-offset: 8px;
+  -o-text-underline-offset: 8px;
+  text-underline-offset: 8px;
 }
 
 .hero-header {
@@ -940,6 +994,47 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 
+@-webkit-keyframes reveal-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes reveal-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes reveal-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes reveal-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 @-webkit-keyframes reveal {
   0% {
     opacity: 0;
@@ -948,7 +1043,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
   }
 }
-
 @keyframes reveal {
   0% {
     opacity: 0;

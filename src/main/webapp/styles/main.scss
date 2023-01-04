@@ -75,11 +75,58 @@ body {
   width: 35px;
   height: 25px;
   position: relative;
+  opacity: 0;
 }
 
 .navbar-brand {
   img {
     display: block;
+    opacity: 0;
+  }
+}
+
+// Sidenav
+.sidenav-back-panel {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.sidenav {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $main-white;
+  overflow-x: hidden;
+  transition: .6s;
+  z-index: 10;
+  padding-top: 100px;
+
+  .navigation {
+    text-align: end;
+    display: block;
+    p {
+      font-weight: 600;
+      font-size: 30px;
+      -webkit-text-decoration: solid underline 2px $main-orange;
+      -moz-text-decoration: solid underline 2px $main-orange;
+      -ms-text-decoration: solid underline 2px $main-orange;
+      -o-text-decoration: solid underline 2px $main-orange;
+      text-decoration: solid underline 2px $main-orange;
+      -webkit-text-underline-offset: 8px;
+      -moz-text-underline-offset: 8px;
+      -ms-text-underline-offset: 8px;
+      -o-text-underline-offset: 8px;
+      text-underline-offset: 8px;
+    } 
   }
 }
 
@@ -264,6 +311,28 @@ body {
 }
 
 // Animations
+
+@keyframes reveal-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes reveal-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 
 @keyframes reveal {
   0% {

@@ -1,10 +1,14 @@
 import { heroHeaderReveal } from "./animations/heroHeader.js";
 import { glowOfMainButtons } from "./animations/mainButtons.js";
+import { animateNavbarMobile } from "./animations/navbarMobile.js";
+import { toggleSideNav } from "./animations/sideNav.js";
+
+animateNavbarMobile();
+heroHeaderReveal();
+toggleSideNav();
+glowOfMainButtons();
 
 const links = document.querySelectorAll(".navigation-link");
-
-heroHeaderReveal()
-glowOfMainButtons()
 
 // Adding event listeners for each link
 links.forEach((link) => {
@@ -30,6 +34,10 @@ links.forEach((link) => {
         break;
     }
     // Scrolling into selected section
-    selectedSection.scrollIntoView({ block: "center", behavior: "smooth" });
+    if(window.screen.width < 992) {
+      selectedSection.scrollIntoView({ block: "start", behavior: "smooth" });
+    } else {
+      selectedSection.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
   });
 });
