@@ -19,21 +19,22 @@
   .header-link {
     display: block;
     text-decoration: none;
-    color: $header-link-color;
     cursor: pointer;
+    opacity: 0;
   }
 
   .header-right-section {
     display: flex;
     a {
       text-decoration: none;
-      color: $header-link-color;
+      opacity: 0;
     }
   }
 
   .dropdown {
     margin-left: 40px;
     font-weight: 500;
+    opacity: 0;
   }
 
   .hamburger-container {

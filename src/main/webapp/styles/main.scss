@@ -33,6 +33,7 @@ a {
 
 body {
   background-color: $body-background-color !important;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -311,6 +312,17 @@ body {
 }
 
 // Animations
+
+@keyframes reveal-to-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
 @keyframes reveal-to-right {
   0% {

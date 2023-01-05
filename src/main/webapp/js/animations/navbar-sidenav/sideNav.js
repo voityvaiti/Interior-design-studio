@@ -13,8 +13,8 @@ export function toggleSideNav() {
   });
   sideNavBackPanel.addEventListener("click", closeSideNav);
   Array.from(sideNav.children[0].children).forEach((link) => {
-    link.addEventListener("click", closeSideNav)
-  })
+    link.addEventListener("click", closeSideNav);
+  });
 }
 
 function closeSideNav() {

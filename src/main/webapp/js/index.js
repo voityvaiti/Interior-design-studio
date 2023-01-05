@@ -1,11 +1,18 @@
 import { heroHeaderReveal } from "./animations/heroHeader.js";
 import { glowOfMainButtons } from "./animations/mainButtons.js";
-import { animateNavbarMobile } from "./animations/navbarMobile.js";
-import { toggleSideNav } from "./animations/sideNav.js";
+import { animateNavbarMobile } from "./animations/navbar-sidenav/navbarMobile.js";
+import { animateNavbarDesktop } from "./animations/navbar-sidenav/navbarDesktop.js";
+import { toggleSideNav } from "./animations/navbar-sidenav/sideNav.js";
+import { animateHeroImg } from "./animations/heroImg.js";
 
-animateNavbarMobile();
+if (window.screen.width < 992) {
+  animateNavbarMobile();
+  toggleSideNav();
+} else {
+  animateNavbarDesktop();
+}
 heroHeaderReveal();
-toggleSideNav();
+animateHeroImg()
 glowOfMainButtons();
 
 const links = document.querySelectorAll(".navigation-link");
@@ -34,10 +41,6 @@ links.forEach((link) => {
         break;
     }
     // Scrolling into selected section
-    if(window.screen.width < 992) {
-      selectedSection.scrollIntoView({ block: "start", behavior: "smooth" });
-    } else {
-      selectedSection.scrollIntoView({ block: "center", behavior: "smooth" });
-    }
+    selectedSection.scrollIntoView({ block: "start", behavior: "smooth" });
   });
 });
