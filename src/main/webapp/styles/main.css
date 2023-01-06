@@ -61,22 +61,14 @@
   .about-studio-row p {
     margin: 30px 0px;
   }
-  .about-studio-row p:nth-child(2) {
-    display: none;
-  }
-  .about-studio-header-col h2 {
-    max-width: -webkit-min-content;
-    max-width: -moz-min-content;
-    max-width: min-content;
-  }
   .more {
     max-width: -webkit-fit-content !important;
     max-width: -moz-fit-content !important;
     max-width: fit-content !important;
     font-size: 14px;
     font-weight: 600;
-    -webkit-text-decoration-color: #d3a265;
-            text-decoration-color: #d3a265;
+    -webkit-text-decoration: underline #d3a265;
+            text-decoration: underline #d3a265;
     text-underline-offset: 5px;
   }
   .services-card-container {
@@ -849,6 +841,42 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
+.about-studio-header h2 {
+  opacity: 0;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+
+.about-studio-more-container {
+  display: flex;
+  justify-content: center;
+  height: 0;
+  transition: 1s;
+  overflow-y: hidden;
+}
+
+.about-studio-more,
+.about-studio-main-text {
+  opacity: 0;
+}
+
+.about-studio-more-text {
+  margin: 0 !important;
+}
+
+.reveal-text-xs {
+  height: 160px;
+}
+
+.reveal-text-sm {
+  height: 110px;
+}
+
+.reveal-text-md {
+  height: 80px;
+}
+
 .our-services-section {
   background-color: #fff;
 }
@@ -997,6 +1025,27 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 
+@-webkit-keyframes reveal-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes reveal-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 @-webkit-keyframes reveal-to-bottom {
   0% {
     opacity: 0;
@@ -1007,7 +1056,6 @@ body::-webkit-scrollbar-thumb {
     transform: translateY(0px);
   }
 }
-
 @keyframes reveal-to-bottom {
   0% {
     opacity: 0;
@@ -1041,7 +1089,7 @@ body::-webkit-scrollbar-thumb {
 @-webkit-keyframes reveal-to-left {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(50%);
   }
   100% {
     opacity: 1;
@@ -1051,7 +1099,7 @@ body::-webkit-scrollbar-thumb {
 @keyframes reveal-to-left {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(50%);
   }
   100% {
     opacity: 1;
