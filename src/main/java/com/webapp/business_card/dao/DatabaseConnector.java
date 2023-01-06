@@ -31,7 +31,8 @@ public class DatabaseConnector {
 		try {
 			Properties dbProperties = new Properties();
 			dbProperties.load(DatabaseConnector.class.getClassLoader().getResourceAsStream("db.properties"));
-			connection = DriverManager.getConnection(dbProperties.getProperty("URL"), dbProperties);
+			connection = DriverManager.getConnection(dbProperties.getProperty("URL"),
+					dbProperties.getProperty("USERNAME"), dbProperties.getProperty("PASSWORD"));
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
 		}

@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.webapp.business_card.dao.CallDao;
+import com.webapp.business_card.dao.CustomerDao;
 import com.webapp.business_card.models.Call;
+import com.webapp.business_card.models.Customer;
 import com.webapp.business_card.validators.CallOrderValidator;
 
 @WebServlet("/order")
@@ -43,6 +45,7 @@ public class CallOrderServlet extends HttpServlet {
 		else {
 		try {
 			CallDao.getInstance().addCall(new Call(name, number));
+			CustomerDao.getInstance().addCustomer(new Customer(name, "", number));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
