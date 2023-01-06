@@ -1,35 +1,34 @@
-import { heroHeaderReveal } from "./animations/heroHeader.js";
+import { heroHeaderReveal } from "./animations/hero/heroHeader.js";
 import { glowOfMainButtons } from "./animations/mainButtons.js";
+import { animateNavbarMobile } from "./animations/navbar-sidenav/navbarMobile.js";
+import { animateNavbarDesktop } from "./animations/navbar-sidenav/navbarDesktop.js";
+import { toggleSideNav } from "./animations/navbar-sidenav/sideNav.js";
+import { animateHeroImg } from "./animations/hero/heroImg.js";
+import { aboutStudioReveal } from "./animations/about-studio/aboutStudio.js";
 
-const links = document.querySelectorAll(".navigation-link");
+import { addScrollListener } from "./helpers/scrollListener.js";
+import { addScrollIntoSection } from "./helpers/navigation.js";
 
-heroHeaderReveal()
-glowOfMainButtons()
+if (window.screen.width < 576) {
+  animateHeroImg("xs");
+  addScrollListener("xs");
+} else if (window.screen.width > 576 && window.screen.width <= 768) {
+  animateHeroImg("sm");
+  aboutStudioReveal('sm');
+} else if (window.screen.width > 768 && window.screen.width <= 992) {
+  animateHeroImg("md");
+  aboutStudioReveal('md');
+}
 
-// Adding event listeners for each link
-links.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    // Declaring a variable that will contain selected section
-    let selectedSection;
-    // Assigning selected section depending on id of clicked link
-    switch (event.target.id) {
-      case "about":
-        selectedSection = document.querySelector(".about-studio-section");
-        break;
-      case "services":
-        selectedSection = document.querySelector(".our-services-section");
-        break;
-      case "portfolio":
-        selectedSection = document.querySelector(".our-portfolio-section");
-        break;
-      case "pricing":
-        selectedSection = document.querySelector(".our-pricing-section");
-        break;
-      case "testimonials":
-        selectedSection = document.querySelector(".testimonials-section");
-        break;
-    }
-    // Scrolling into selected section
-    selectedSection.scrollIntoView({ block: "center", behavior: "smooth" });
-  });
-});
+if (window.screen.width < 992) {
+  animateNavbarMobile();
+  toggleSideNav();
+} else {
+  animateHeroImg("lg");
+  animateNavbarDesktop();
+  addScrollListener("lg");
+}
+
+heroHeaderReveal();
+glowOfMainButtons();
+addScrollIntoSection();

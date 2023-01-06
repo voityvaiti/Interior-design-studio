@@ -1,8 +1,7 @@
-// Getting access to main buttons
-const mainButtons = document.querySelectorAll(".main-btn");
-
 export function glowOfMainButtons() {
-  // Adding event listeners for each main button 
+  // Getting access to main buttons
+  const mainButtons = document.querySelectorAll(".main-btn");
+  // Adding event listeners for each main button
   mainButtons.forEach((button) => {
     button.addEventListener("mouseover", (event) => {
       /* Adding class that on hover causes animation and removing class
