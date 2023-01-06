@@ -19,12 +19,6 @@ import com.webapp.business_card.validators.CallOrderValidator;
 
 @WebServlet("/order")
 public class CallOrderServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    public CallOrderServlet() {
-        super();
-    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/view/orderCall.jsp").forward(request, response);
 	}
