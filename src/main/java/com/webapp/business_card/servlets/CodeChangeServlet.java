@@ -18,12 +18,6 @@ import com.webapp.business_card.validators.CodeValidator;
 
 @WebServlet("/codeChange")
 public class CodeChangeServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	public CodeChangeServlet() {
-		super();
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {

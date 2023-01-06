@@ -16,12 +16,6 @@ import com.webapp.business_card.security.PageSecurity;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	public AdminServlet() {
-		super();
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
@@ -46,5 +40,4 @@ public class AdminServlet extends HttpServlet {
 		}
 		doGet(request, response);
 	}
-
 }

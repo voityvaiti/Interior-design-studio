@@ -39,6 +39,19 @@ public class CustomerDao {
 		}
 		return customers;
 	}
+
+	public Customer getExactCustomer(int id) throws SQLException {
+		PreparedStatement getCustomerStatement =
+				connection.prepareStatement("SELECT * FROM customers WHERE id=?");
+		getCustomerStatement.setInt(1, id);
+		ResultSet customerResultSet = getCustomerStatement.executeQuery();
+
+		customerResultSet.next();
+		String firstName = customerResultSet.getString("first_name");
+		String lastName = customerResultSet.getString("last_name");
+		String telNumber = customerResultSet.getString("tel_number");
+		return new Customer(id, firstName, lastName, telNumber);
+	}
 	
 	public void addCustomer(Customer customer) throws SQLException {
 		PreparedStatement customerCheckStatement =

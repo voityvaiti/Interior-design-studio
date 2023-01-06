@@ -15,8 +15,6 @@ import com.webapp.business_card.security.Encryptor;
 
 @WebServlet("/authn")
 public class AuthnServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/view/authn.jsp").forward(request, response);
