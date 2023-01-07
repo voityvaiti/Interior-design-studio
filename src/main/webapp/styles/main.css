@@ -531,15 +531,13 @@
   }
   .about-studio-row p {
     margin: 0px;
-  }
-  .about-studio-row p {
     max-width: 575px;
-  }
-  .about-studio-row p:nth-child(2) {
-    display: block;
   }
   .about-studio-row .more {
     display: none;
+  }
+  .about-studio-more-text-lg {
+    display: block !important;
   }
   .our-services-section {
     padding: 50px 135px;
@@ -849,11 +847,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about-studio-more-container {
-  display: flex;
-  justify-content: center;
   height: 0;
   transition: 1s;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .about-studio-more,
@@ -861,8 +857,14 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-.about-studio-more-text {
+.about-studio-more-text-xs,
+.about-studio-more-text-lg {
   margin: 0 !important;
+}
+
+.about-studio-more-text-lg {
+  opacity: 0;
+  display: none;
 }
 
 .reveal-text-xs {

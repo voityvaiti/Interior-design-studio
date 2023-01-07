@@ -3,10 +3,10 @@ import { aboutStudioReveal } from "../animations/about-studio/aboutStudio.js";
 export function addScrollListener(breakpoint) {
   window.addEventListener("scroll", () => {
     let scrollYPosition = scrollY;
-    console.log(scrollYPosition);
+    // console.log(scrollYPosition);
     switch (breakpoint) {
       case "xs":
-        if (scrollYPosition >= 500 && scrollYPosition <= 600) {
+        if (scrollYPosition >= 400 && scrollYPosition <= 500) {
           aboutStudioReveal("xs");
         }
         break;
