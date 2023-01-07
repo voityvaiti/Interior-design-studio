@@ -12,33 +12,31 @@ export function aboutStudioReveal(breakpoint) {
     const aboutStudioMoreContainer = document.querySelector(
       ".about-studio-more-container"
     );
-
-    let revealTextBreakpoint;
-    switch (breakpoint) {
-      case "xs":
-        revealTextBreakpoint = "xs";
-        break;
-      case "sm":
-        revealTextBreakpoint = "sm";
-        break;
-      case "md":
-        revealTextBreakpoint = "md";
-        break;
-    }
+    const aboutStudioMoreTextLg = document.querySelector(
+      ".about-studio-more-text-lg"
+    );
 
     aboutStudioMore.addEventListener("click", () => {
-      aboutStudioMoreContainer.classList.toggle(
-        `reveal-text-${revealTextBreakpoint}`
-      );
+      aboutStudioMoreContainer.classList.toggle(`reveal-text-${breakpoint}`);
     });
 
     aboutStudioSectionHeader.style.animation = "reveal-to-left 1s ease-in-out";
     aboutStudioSectionHeader.style.opacity = "1";
 
-    setTimeout(() => {
-      aboutStudioMainText.style.animation = "reveal-to-right 1s ease-in-out";
-      aboutStudioMainText.style.opacity = "1";
-    }, 500);
+    if (breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md") {
+      setTimeout(() => {
+        aboutStudioMainText.style.animation = "reveal-to-right 1s ease-in-out";
+        aboutStudioMainText.style.opacity = "1";
+      }, 500);
+    } else {
+      setTimeout(() => {
+        aboutStudioMainText.style.animation = "reveal-to-bottom 1s ease-in-out";
+        aboutStudioMainText.style.opacity = "1";
+
+        aboutStudioMoreTextLg.style.animation = "reveal-to-top 1s ease-in-out";
+        aboutStudioMoreTextLg.style.opacity = "1";
+      }, 500);
+    }
 
     setTimeout(() => {
       aboutStudioMore.style.animation = "reveal-to-left 1s ease-in-out";
