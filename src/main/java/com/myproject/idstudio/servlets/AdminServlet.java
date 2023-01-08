@@ -1,4 +1,4 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
 import java.io.IOException;
 
@@ -10,9 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.webapp.business_card.dao.CallDao;
-import com.webapp.business_card.models.Call;
-import com.webapp.business_card.security.PageSecurity;
+
+import com.myproject.idstudio.dao.CallDao;
+import com.myproject.idstudio.models.Call;
+import com.myproject.idstudio.security.PageSecurity;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {

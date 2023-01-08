@@ -1,4 +1,6 @@
-package com.webapp.business_card.dao;
+package com.myproject.idstudio.dao;
+
+import com.myproject.idstudio.service.DatabaseConnector;
 
 import java.sql.Connection;
 

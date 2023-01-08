@@ -1,4 +1,4 @@
-package com.webapp.business_card.models;
+package com.myproject.idstudio.models;
 
 public class Customer {
 	private int id;

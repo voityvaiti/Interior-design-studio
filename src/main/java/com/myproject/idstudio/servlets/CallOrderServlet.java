@@ -1,4 +1,4 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
 import java.io.IOException;
 
@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webapp.business_card.dao.CallDao;
-import com.webapp.business_card.dao.CustomerDao;
-import com.webapp.business_card.models.Call;
-import com.webapp.business_card.models.Customer;
-import com.webapp.business_card.validators.CallOrderValidator;
+import com.myproject.idstudio.dao.CallDao;
+import com.myproject.idstudio.dao.CustomerDao;
+import com.myproject.idstudio.models.Call;
+import com.myproject.idstudio.models.Customer;
+import com.myproject.idstudio.validators.CallOrderValidator;
 
 @WebServlet("/order")
 public class CallOrderServlet extends HttpServlet {

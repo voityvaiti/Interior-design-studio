@@ -1,4 +1,4 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("")
-public class PageServlet extends HttpServlet {
+public class MainPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/view/index.html").forward(request, response);

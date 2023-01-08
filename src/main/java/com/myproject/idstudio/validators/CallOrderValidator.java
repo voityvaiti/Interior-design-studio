@@ -1,6 +1,6 @@
-package com.webapp.business_card.validators;
+package com.myproject.idstudio.validators;
 
-import com.webapp.business_card.models.Call;
+import com.myproject.idstudio.models.Call;
 
 public class CallOrderValidator extends Validator {
 	Call call;

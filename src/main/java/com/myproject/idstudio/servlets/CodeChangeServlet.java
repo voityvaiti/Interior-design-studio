@@ -1,4 +1,4 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webapp.business_card.dao.CodeDao;
-import com.webapp.business_card.security.Encryptor;
-import com.webapp.business_card.security.PageSecurity;
-import com.webapp.business_card.validators.CodeValidator;
+import com.myproject.idstudio.dao.CodeDao;
+import com.myproject.idstudio.security.Encryptor;
+import com.myproject.idstudio.security.PageSecurity;
+import com.myproject.idstudio.validators.CodeValidator;
 
 @WebServlet("/codeChange")
 public class CodeChangeServlet extends HttpServlet {

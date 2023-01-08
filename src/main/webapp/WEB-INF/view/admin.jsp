@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.webapp.business_card.models.Call" %>
+<%@ page import="com.myproject.idstudio.models.Call" %>
 <!DOCTYPE html>
 <html>
 <head>

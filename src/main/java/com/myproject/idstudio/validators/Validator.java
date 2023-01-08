@@ -1,4 +1,4 @@
-package com.webapp.business_card.validators;
+package com.myproject.idstudio.validators;
 
 public abstract class Validator {
 	protected String errors;

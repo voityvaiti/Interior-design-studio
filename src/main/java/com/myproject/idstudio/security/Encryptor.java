@@ -1,13 +1,13 @@
-package com.webapp.business_card.security;
+package com.myproject.idstudio.security;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Encryptor {
-	public static String encrypt(String str) throws NoSuchAlgorithmException {
-		byte[] bytes = MessageDigest.getInstance("MD5").digest(str.getBytes());
+	public static String encrypt(String strToEncrypt) throws NoSuchAlgorithmException {
+		byte[] bytesArrOfEncryptedStr = MessageDigest.getInstance("MD5").digest(strToEncrypt.getBytes());
 		StringBuilder encryptedStringBuilder = new StringBuilder();
-		for(byte b: bytes) {
+		for(byte b: bytesArrOfEncryptedStr) {
 			encryptedStringBuilder.append(String.format("%02X", b));
 		}
 		return encryptedStringBuilder.toString();

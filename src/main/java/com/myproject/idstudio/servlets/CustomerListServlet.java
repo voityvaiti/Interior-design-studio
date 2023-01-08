@@ -1,8 +1,8 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
-import com.webapp.business_card.dao.CustomerDao;
-import com.webapp.business_card.models.Customer;
-import com.webapp.business_card.security.PageSecurity;
+import com.myproject.idstudio.dao.CustomerDao;
+import com.myproject.idstudio.models.Customer;
+import com.myproject.idstudio.security.PageSecurity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

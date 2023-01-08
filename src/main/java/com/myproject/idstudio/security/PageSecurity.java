@@ -1,4 +1,4 @@
-package com.webapp.business_card.security;
+package com.myproject.idstudio.security;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webapp.business_card.dao.CodeDao;
+import com.myproject.idstudio.dao.CodeDao;
 
 public class PageSecurity {
 	
