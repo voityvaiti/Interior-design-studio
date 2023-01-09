@@ -18,7 +18,7 @@
 }
 else {
   for(int i = 0; i< list.size(); i++) {%>
-<a href="/Interior-Design-Studio/showCustomer?id=<%= list.get(i).getId() %>">
+<a href="/idstudio/showCustomer?id=<%= list.get(i).getId() %>">
     <%= list.get(i)%> </a>
 <br>
 <% }}%>

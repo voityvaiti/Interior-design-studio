@@ -32,7 +32,7 @@ public class AuthnServlet extends HttpServlet {
 		try {
 			if (encryptedCode.equalsIgnoreCase(codeDao.getCode())) {
 				request.getSession().setAttribute("code", encryptedCode);
-				response.sendRedirect("/Interior-Design-Studio/admin");
+				response.sendRedirect("/idstudio/admin");
 			} else {
 				request.getSession().setAttribute("authnErrorMessage", "Wrong code!");
 				doGet(request, response);

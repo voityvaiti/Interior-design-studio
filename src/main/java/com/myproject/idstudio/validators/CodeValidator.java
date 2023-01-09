@@ -1,6 +1,8 @@
 package com.myproject.idstudio.validators;
 
-public class CodeValidator extends Validator{
+import com.myproject.idstudio.abstractions.Validator;
+
+public class CodeValidator extends Validator {
 	String code;
 
 	public CodeValidator(String code) {

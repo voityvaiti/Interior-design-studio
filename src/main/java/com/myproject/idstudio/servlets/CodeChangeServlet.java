@@ -42,7 +42,7 @@ public class CodeChangeServlet extends HttpServlet {
 					session.removeAttribute("codeChangeErrorMessage");
 				} else {
 					CodeDao.getInstance().updateCode(Encryptor.encrypt(code));
-					response.sendRedirect("/Interior-Design-Studio/admin");
+					response.sendRedirect("/idstudio/admin");
 				}
 			}
 		} catch (NoSuchAlgorithmException | SQLException | IOException | ServletException e) {

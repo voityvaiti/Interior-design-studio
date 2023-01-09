@@ -43,7 +43,7 @@ public class CallOrderServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("/Interior-Design-Studio/");
+		response.sendRedirect("/idstudio/");
 		}
 	}
 

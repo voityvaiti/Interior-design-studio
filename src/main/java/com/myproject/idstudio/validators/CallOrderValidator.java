@@ -1,5 +1,6 @@
 package com.myproject.idstudio.validators;
 
+import com.myproject.idstudio.abstractions.Validator;
 import com.myproject.idstudio.models.Call;
 
 public class CallOrderValidator extends Validator {

@@ -11,8 +11,8 @@
 </head>
 <body>
 <h1>Hello, admin</h1>
-<a href="/Interior-Design-Studio/codeChange">Change code</a><br>
-<a href="/Interior-Design-Studio/customersList">List of customers</a>
+<a href="/idstudio/codeChange">Change code</a><br>
+<a href="/idstudio/customersList">List of customers</a>
 <h3>Calls:</h3>
 <%
 List<Call> list = (ArrayList<Call>) request.getSession().getAttribute("list"); 

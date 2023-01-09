@@ -17,7 +17,7 @@ public class PageSecurity {
 		if(requestSecureCode!=null && requestSecureCode.equalsIgnoreCase(codeDao.getCode())) 
 			return true;
 		else {
-			response.sendRedirect("/Interior-Design-Studio/authn");
+			response.sendRedirect("/idstudio/authn");
 			return false;
 		}
 	}

@@ -1,9 +1,9 @@
-package com.myproject.idstudio.validators;
+package com.myproject.idstudio.abstractions;
 
 public abstract class Validator {
 	protected String errors;
 	
-	abstract String validate();
+	protected abstract String validate();
 	
 	public String getErrors() {
 		return errors;
