@@ -1,4 +1,4 @@
-package com.webapp.business_card.dao;
+package com.myproject.idstudio.service;
 
 import java.io.IOException;
 import java.sql.Connection;

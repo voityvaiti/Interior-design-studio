@@ -1,4 +1,4 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webapp.business_card.dao.CodeDao;
-import com.webapp.business_card.security.Encryptor;
+import com.myproject.idstudio.dao.CodeDao;
+import com.myproject.idstudio.security.Encryptor;
 
 @WebServlet("/authn")
 public class AuthnServlet extends HttpServlet {
@@ -32,7 +32,7 @@ public class AuthnServlet extends HttpServlet {
 		try {
 			if (encryptedCode.equalsIgnoreCase(codeDao.getCode())) {
 				request.getSession().setAttribute("code", encryptedCode);
-				response.sendRedirect("/Interior-Design-Studio/admin");
+				response.sendRedirect("/idstudio/admin");
 			} else {
 				request.getSession().setAttribute("authnErrorMessage", "Wrong code!");
 				doGet(request, response);

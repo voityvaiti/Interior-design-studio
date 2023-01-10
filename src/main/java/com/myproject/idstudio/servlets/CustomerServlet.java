@@ -1,7 +1,7 @@
-package com.webapp.business_card.servlets;
+package com.myproject.idstudio.servlets;
 
-import com.webapp.business_card.dao.CustomerDao;
-import com.webapp.business_card.models.Customer;
+import com.myproject.idstudio.dao.CustomerDao;
+import com.myproject.idstudio.models.Customer;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,9 +13,9 @@ import java.sql.SQLException;
 public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Customer customer = new Customer(null, null, null);
+        Customer customer;
         try {
-            customer = CustomerDao.getInstance().getExactCustomer(
+            customer = CustomerDao.getInstance().getSpecificCustomer(
                     Integer.parseInt(request.getParameter("id")));
         } catch (SQLException e) {
             throw new RuntimeException(e);

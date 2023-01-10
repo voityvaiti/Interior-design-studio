@@ -1,4 +1,4 @@
-<%@ page import="com.webapp.business_card.models.Customer" %>
+<%@ page import="com.myproject.idstudio.models.Customer" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

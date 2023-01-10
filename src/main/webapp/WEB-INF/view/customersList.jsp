@@ -1,4 +1,4 @@
-<%@ page import="com.webapp.business_card.models.Customer" %>
+<%@ page import="com.myproject.idstudio.models.Customer" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -18,7 +18,7 @@
 }
 else {
   for(int i = 0; i< list.size(); i++) {%>
-<a href="/Interior-Design-Studio/showCustomer?id=<%= list.get(i).getId() %>">
+<a href="/idstudio/showCustomer?id=<%= list.get(i).getId() %>">
     <%= list.get(i)%> </a>
 <br>
 <% }}%>

@@ -1,4 +1,4 @@
-package com.webapp.business_card.dao;
+package com.myproject.idstudio.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.webapp.business_card.models.Customer;
+import com.myproject.idstudio.service.DatabaseConnector;
+import com.myproject.idstudio.models.Customer;
 
 public class CustomerDao {
 	private static CustomerDao instance;
@@ -40,7 +41,7 @@ public class CustomerDao {
 		return customers;
 	}
 
-	public Customer getExactCustomer(int id) throws SQLException {
+	public Customer getSpecificCustomer(int id) throws SQLException {
 		PreparedStatement getCustomerStatement =
 				connection.prepareStatement("SELECT * FROM customers WHERE id=?");
 		getCustomerStatement.setInt(1, id);

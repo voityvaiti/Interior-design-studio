@@ -1,4 +1,4 @@
-package com.webapp.business_card.dao;
+package com.myproject.idstudio.dao;
 
 import java.sql.Connection;
 
@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.webapp.business_card.models.Call;
+import com.myproject.idstudio.models.Call;
+import com.myproject.idstudio.service.DatabaseConnector;
 
 public class CallDao {
 	private static CallDao instance;

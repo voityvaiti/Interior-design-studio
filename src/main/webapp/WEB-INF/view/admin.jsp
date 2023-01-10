@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.webapp.business_card.models.Call" %>
+<%@ page import="com.myproject.idstudio.models.Call" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +11,8 @@
 </head>
 <body>
 <h1>Hello, admin</h1>
-<a href="/Interior-Design-Studio/codeChange">Change code</a><br>
-<a href="/Interior-Design-Studio/customersList">List of customers</a>
+<a href="/idstudio/codeChange">Change code</a><br>
+<a href="/idstudio/customersList">List of customers</a>
 <h3>Calls:</h3>
 <%
 List<Call> list = (ArrayList<Call>) request.getSession().getAttribute("list"); 
