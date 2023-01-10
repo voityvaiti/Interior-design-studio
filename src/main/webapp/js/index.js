@@ -1,5 +1,5 @@
 import { heroHeaderReveal } from "./animations/hero/heroHeader.js";
-import { glowOfMainButtons } from "./animations/mainButtons.js";
+import { glowOfMainButtons } from "./animations/main-buttons/mainButtons.js"
 import { animateNavbarMobile } from "./animations/navbar-sidenav/navbarMobile.js";
 import { animateNavbarDesktop } from "./animations/navbar-sidenav/navbarDesktop.js";
 import { toggleSideNav } from "./animations/navbar-sidenav/sideNav.js";

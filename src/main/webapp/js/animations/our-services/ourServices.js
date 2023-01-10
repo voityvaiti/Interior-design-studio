@@ -89,12 +89,14 @@ function interiorDesignReveal(breakpoint) {
     ourServicesSectionHeader.style.opacity = "1";
 
     setTimeout(() => {
-      interiorDesignCardIcon.style.animation = "reveal-to-bottom 1s ease-in-out";
+      interiorDesignCardIcon.style.animation =
+        "reveal-to-bottom 1s ease-in-out";
       interiorDesignCardIcon.style.opacity = "1";
     }, 300);
 
     setTimeout(() => {
-      interiorDesignCardHeader.style.animation = "reveal-to-bottom 1s ease-in-out";
+      interiorDesignCardHeader.style.animation =
+        "reveal-to-bottom 1s ease-in-out";
       interiorDesignCardHeader.style.opacity = "1";
     }, 200);
 
@@ -245,7 +247,8 @@ function spacePlanningReveal(breakpoint) {
     }, 900);
 
     setTimeout(() => {
-      spacePlanningCardHeader.style.animation = "reveal-to-bottom 1s ease-in-out";
+      spacePlanningCardHeader.style.animation =
+        "reveal-to-bottom 1s ease-in-out";
       spacePlanningCardHeader.style.opacity = "1";
     }, 800);
 
@@ -271,6 +274,7 @@ function projectManagementReveal(breakpoint) {
   const projectManagementCardDescription = document.getElementById(
     "project-management-card-description"
   );
+  const consultationButton = document.getElementById("consultation-button");
   if (breakpoint === "xs") {
     managementSplittingLine.style.animation = "reveal-to-right 1s ease-in-out";
     managementSplittingLine.style.opacity = "1";
@@ -332,6 +336,10 @@ function projectManagementReveal(breakpoint) {
         "reveal-to-top 1s ease-in-out";
       projectManagementCardDescription.style.opacity = "1";
     }, 1200);
+    setTimeout(() => {
+      consultationButton.style.animation = "reveal-to-top 1s ease-in-out";
+      consultationButton.style.opacity = "1";
+    }, 1300);
   }
   ourServicesCardsInvoking.services = true;
 }

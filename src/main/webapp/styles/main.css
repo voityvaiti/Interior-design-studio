@@ -73,6 +73,7 @@
     -webkit-text-decoration: underline #d3a265;
             text-decoration: underline #d3a265;
     text-underline-offset: 5px;
+    cursor: pointer;
   }
   .services-card-container {
     position: relative;
@@ -107,6 +108,9 @@
   }
   .our-portfolio-section .section-header {
     margin-bottom: 65px;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
   }
   .tabs-container {
     padding: 0px 30px 50px !important;
@@ -118,12 +122,12 @@
     max-width: 550px;
     flex-wrap: wrap;
   }
-  .tabs a {
+  .tabs p {
     font-size: 13px;
     font-weight: 600;
-    text-decoration: none;
+    cursor: pointer;
   }
-  .tabs a:nth-child(1) {
+  .tabs p:nth-child(1) {
     color: #d3a265 !important;
     font-weight: 700;
   }
@@ -139,6 +143,7 @@
   }
   .gallery .card {
     border: none;
+    background-color: transparent;
   }
   .gallery > div:nth-child(n+4) {
     display: none;
@@ -773,7 +778,23 @@ body::-webkit-scrollbar-thumb {
 #management-splitting-line,
 #project-management-card-icon,
 #project-management-card-header,
-#project-management-card-description {
+#project-management-card-description,
+#consultation-button,
+#our-portfolio-section-header,
+#our-portfolio-all,
+#our-portfolio-commercial,
+#our-portfolio-residental,
+#our-portfolio-office,
+#our-portfolio-other,
+#gallery-img-1,
+#gallery-img-2,
+#gallery-img-3,
+#gallery-img-4,
+#gallery-img-5,
+#gallery-img-6,
+#gallery-img-7,
+#gallery-img-8,
+#tabs-container-more {
   opacity: 0;
 }
 
