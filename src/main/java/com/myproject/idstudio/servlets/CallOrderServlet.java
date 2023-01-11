@@ -20,7 +20,7 @@ import com.myproject.idstudio.validators.CallOrderValidator;
 @WebServlet("/order")
 public class CallOrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/orderCall.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/orderCall.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
