@@ -18,7 +18,7 @@
 }
 else {
   for(int i = 0; i< list.size(); i++) {%>
-<a href="/idstudio/admin/showCustomer?id=<%= list.get(i).getId() %>">
+<a href="<%=request.getContextPath()%>/admin/showCustomer?id=<%= list.get(i).getId() %>">
     <%= list.get(i)%> </a>
 <br>
 <% }}%>

@@ -25,7 +25,7 @@ public class AdminPagesSecurityFilter implements Filter {
             if(clientSecureCode!=null && clientSecureCode.equalsIgnoreCase(codeDao.getCode())) {
                 chain.doFilter(request, response);
             } else {
-                ((HttpServletResponse)response).sendRedirect("/idstudio/authn");
+                ((HttpServletResponse)response).sendRedirect(((HttpServletRequest) request).getContextPath() + "/authn");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

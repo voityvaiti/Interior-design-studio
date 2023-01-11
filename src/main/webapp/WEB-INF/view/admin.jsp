@@ -11,8 +11,8 @@
 </head>
 <body>
 <h1>Hello, admin</h1>
-<a href="/idstudio/admin/codeChange">Change code</a><br>
-<a href="/idstudio/admin/customersList">List of customers</a>
+<a href="<%=request.getContextPath()%>/admin/codeChange">Change code</a><br>
+<a href="<%=request.getContextPath()%>/admin/customersList">List of customers</a>
 <h3>Calls:</h3>
 <%
 List<Call> list = (ArrayList<Call>) request.getSession().getAttribute("list"); 

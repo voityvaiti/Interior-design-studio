@@ -34,7 +34,7 @@ public class CodeChangeServlet extends HttpServlet {
                 session.removeAttribute("codeChangeErrorMessage");
             } else {
                 CodeDao.getInstance().updateCode(Encryptor.encrypt(code));
-                response.sendRedirect("/idstudio/admin");
+                response.sendRedirect(request.getContextPath() + "/admin");
             }
         } catch (NoSuchAlgorithmException | SQLException e) {
             e.printStackTrace();
