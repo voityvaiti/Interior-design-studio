@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/showCustomer")
+@WebServlet("/admin/showCustomer")
 public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +21,7 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         request.getSession().setAttribute("customer", customer);
-        request.getRequestDispatcher("WEB-INF/view/customer.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/customer.jsp").forward(request, response);
     }
 
     @Override

@@ -13,41 +13,31 @@ import javax.servlet.http.HttpSession;
 
 import com.myproject.idstudio.dao.CodeDao;
 import com.myproject.idstudio.security.Encryptor;
-import com.myproject.idstudio.security.PageSecurity;
 import com.myproject.idstudio.validators.CodeValidator;
 
-@WebServlet("/codeChange")
+@WebServlet("/admin/codeChange")
 public class CodeChangeServlet extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		try {
-			if (new PageSecurity().isSecure(request, response)) {
-				request.getRequestDispatcher("WEB-INF/view/codeChange.jsp").forward(request, response);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/view/codeChange.jsp").forward(request, response);
+    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		try {
-			if (new PageSecurity().isSecure(request, response)) {
-				HttpSession session = request.getSession();
-				String code = request.getParameter("code");
-				CodeValidator codeValidator = new CodeValidator(code);
-				if (codeValidator.hasErrors()) {
-					session.setAttribute("codeChangeErrorMessage", codeValidator.getErrors());
-					doGet(request, response);
-					session.removeAttribute("codeChangeErrorMessage");
-				} else {
-					CodeDao.getInstance().updateCode(Encryptor.encrypt(code));
-					response.sendRedirect("/idstudio/admin");
-				}
-			}
-		} catch (NoSuchAlgorithmException | SQLException | IOException | ServletException e) {
-			e.printStackTrace();
-		}
-	}
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            HttpSession session = request.getSession();
+            String code = request.getParameter("code");
+            CodeValidator codeValidator = new CodeValidator(code);
+            if (codeValidator.hasErrors()) {
+                session.setAttribute("codeChangeErrorMessage", codeValidator.getErrors());
+                doGet(request, response);
+                session.removeAttribute("codeChangeErrorMessage");
+            } else {
+                CodeDao.getInstance().updateCode(Encryptor.encrypt(code));
+                response.sendRedirect("/idstudio/admin");
+            }
+        } catch (NoSuchAlgorithmException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

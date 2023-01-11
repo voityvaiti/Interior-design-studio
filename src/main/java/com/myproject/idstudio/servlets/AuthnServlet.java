@@ -17,7 +17,7 @@ import com.myproject.idstudio.security.Encryptor;
 public class AuthnServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/authn.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/authn.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
