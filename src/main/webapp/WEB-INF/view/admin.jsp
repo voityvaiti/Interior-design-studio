@@ -11,7 +11,6 @@
 </head>
 <body>
 <h1>Hello, admin</h1>
-<a href="<%=request.getContextPath()%>/admin/codeChange">Change code</a><br>
 <a href="<%=request.getContextPath()%>/admin/customersList">List of customers</a>
 <h3>Calls:</h3>
 <%
