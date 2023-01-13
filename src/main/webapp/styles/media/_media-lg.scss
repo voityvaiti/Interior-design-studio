@@ -146,8 +146,8 @@
     color: $main-black;
   }
   .active .buy-now-button {
+    border: $button-border;
     background-color: $main-white;
-    border: none;
   }
 
   .carousel {

@@ -222,6 +222,12 @@
     color: $main-white;
   }
 
+  .active {
+    button {
+      border-top: 1px solid $main-white;
+    }
+  }
+
   .testimonials-section {
     .section-header {
       margin: 60px 0px;

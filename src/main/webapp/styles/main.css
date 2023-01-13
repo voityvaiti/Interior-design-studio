@@ -200,6 +200,9 @@
     font-weight: 700;
     color: #fff;
   }
+  .active button {
+    border-top: 1px solid #fff;
+  }
   .testimonials-section .section-header {
     margin: 60px 0px;
   }
@@ -610,8 +613,8 @@
     color: #161616;
   }
   .active .buy-now-button {
+    border: 2px solid #d3a265;
     background-color: #fff;
-    border: none;
   }
   .carousel {
     height: 500px;
@@ -794,7 +797,12 @@ body::-webkit-scrollbar-thumb {
 #gallery-img-6,
 #gallery-img-7,
 #gallery-img-8,
-#tabs-container-more {
+#tabs-container-more,
+#our-pricing-section-header,
+#pricing-card-basic,
+#pricing-card-standart,
+#pricing-card-premium,
+#testimonials-section-header {
   opacity: 0;
 }
 
@@ -886,6 +894,14 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
 }
 
+.main-btn {
+  transition: all 0.5s ease-in-out;
+}
+.main-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 2px #d3a265;
+}
+
 .about-studio-header h2 {
   max-width: -webkit-min-content;
   max-width: -moz-min-content;
@@ -957,6 +973,8 @@ body::-webkit-scrollbar-thumb {
 .our-pricing-section .card {
   background-color: #fdfbf8;
   border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 .our-pricing-section .card .card-body {
   padding: 0 !important;
@@ -966,6 +984,7 @@ body::-webkit-scrollbar-thumb {
   height: 1px;
   width: 68%;
   background-color: #dcd1bb;
+  transition: background-color 0.5s ease-in-out;
 }
 .our-pricing-section .card ul {
   list-style: none;
@@ -976,9 +995,13 @@ body::-webkit-scrollbar-thumb {
   line-height: 180%;
   color: #161616;
   font-weight: 500;
+  transition: color 0.5s ease-in-out;
 }
 .our-pricing-section .card p {
   margin: 0;
+}
+.our-pricing-section .card:hover {
+  transform: rotateX(0deg) rotateY(0deg);
 }
 .our-pricing-section .active {
   background-color: #d3a265 !important;
@@ -995,7 +1018,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff !important;
 }
 .our-pricing-section .active button {
-  border-top: 1px solid #fff;
+  transition: all 0.5s ease-in-out;
 }
 
 .pricing-type,
@@ -1004,6 +1027,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 400;
   font-family: "BN Chester";
   color: #161616;
+  transition: color 0.5s ease-in-out;
 }
 
 .testimonials-section {
@@ -1171,45 +1195,5 @@ body::-webkit-scrollbar-thumb {
   }
   100% {
     opacity: 1;
-  }
-}
-@-webkit-keyframes pulsating-effect-on {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
-  }
-  100% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px #d3a265;
-  }
-}
-@keyframes pulsating-effect-on {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
-  }
-  100% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px #d3a265;
-  }
-}
-@-webkit-keyframes pulsating-effect-off {
-  0% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px #d3a265;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
-  }
-}
-@keyframes pulsating-effect-off {
-  0% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px #d3a265;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
   }
 }/*# sourceMappingURL=main.css.map */

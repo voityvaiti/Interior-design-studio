@@ -22,18 +22,18 @@ export function ourPortfolioReveal(breakpoint) {
       document.getElementById("gallery-img-7"),
       document.getElementById("gallery-img-8"),
     ];
+    let filterTimeReveal = 0;
+    let galleryImagesTimeReveal = 400;
     if (breakpoint === "xs") {
       ourPortfolioSectionHeader.style.animation =
         "reveal-to-right 1s ease-in-out";
       ourPortfolioSectionHeader.style.opacity = "1";
-      let filterTime = 0;
-      let galleryImagesTime = 800;
       for (let filter of filters) {
         setTimeout(() => {
           filter.style.animation = "reveal-to-top 1s ease-in-out";
           filter.style.opacity = "1";
-        }, filterTime);
-        filterTime += 200;
+        }, filterTimeReveal);
+        filterTimeReveal += 200;
       }
       for (let image of galleryImages) {
         if (image.id === "gallery-img-4") {
@@ -42,8 +42,8 @@ export function ourPortfolioReveal(breakpoint) {
         setTimeout(() => {
           image.style.animation = "reveal-to-right 1s ease-in-out";
           image.style.opacity = "1";
-        }, galleryImagesTime);
-        galleryImagesTime += 200;
+        }, galleryImagesTimeReveal);
+        galleryImagesTimeReveal += 200;
       }
     } else if (
       breakpoint === "sm" ||
@@ -54,14 +54,12 @@ export function ourPortfolioReveal(breakpoint) {
       ourPortfolioSectionHeader.style.animation =
         "reveal-to-top 1s ease-in-out";
       ourPortfolioSectionHeader.style.opacity = "1";
-      let filterTime = 0;
-      let galleryImagesTime = 400;
       for (let filter of filters) {
         setTimeout(() => {
           filter.style.animation = "reveal-to-top 1s ease-in-out";
           filter.style.opacity = "1";
-        }, filterTime);
-        filterTime += 100;
+        }, filterTimeReveal);
+        filterTimeReveal += 100;
       }
       setTimeout(() => {
         tabsContainerMore.style.animation = "reveal-to-top 1s ease-in-out";
@@ -71,8 +69,8 @@ export function ourPortfolioReveal(breakpoint) {
         setTimeout(() => {
           image.style.animation = "reveal-to-top 1s ease-in-out";
           image.style.opacity = "1";
-        }, galleryImagesTime);
-        galleryImagesTime += 100;
+        }, galleryImagesTimeReveal);
+        galleryImagesTimeReveal += 100;
       }
     }
     wasInvoked = true;

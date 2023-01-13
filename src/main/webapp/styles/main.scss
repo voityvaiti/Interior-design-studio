@@ -84,15 +84,20 @@ body {
 #our-portfolio-residental,
 #our-portfolio-office,
 #our-portfolio-other,
-#gallery-img-1, 
-#gallery-img-2, 
-#gallery-img-3, 
-#gallery-img-4, 
-#gallery-img-5, 
-#gallery-img-6, 
-#gallery-img-7, 
+#gallery-img-1,
+#gallery-img-2,
+#gallery-img-3,
+#gallery-img-4,
+#gallery-img-5,
+#gallery-img-6,
+#gallery-img-7,
 #gallery-img-8,
-#tabs-container-more {
+#tabs-container-more,
+#our-pricing-section-header,
+#pricing-card-basic,
+#pricing-card-standart,
+#pricing-card-premium,
+#testimonials-section-header {
   opacity: 0;
 }
 
@@ -194,6 +199,14 @@ body {
   border-radius: 8px;
 }
 
+.main-btn {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 2px $main-orange;
+  }
+}
+
 // About Studio
 
 .about-studio-header {
@@ -272,6 +285,8 @@ body {
   .card {
     background-color: $pricing-card-color;
     border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
     .card-body {
       padding: 0 !important;
     }
@@ -281,6 +296,7 @@ body {
       height: 1px;
       width: 68%;
       background-color: $splitting-line-color;
+      transition: background-color 0.5s ease-in-out;
     }
     ul {
       list-style: none;
@@ -290,10 +306,14 @@ body {
         line-height: 180%;
         color: $main-black;
         font-weight: 500;
+        transition: color .5s ease-in-out;
       }
     }
     p {
       margin: 0;
+    }
+    &:hover {
+      transform: rotateX(0deg) rotateY(0deg);
     }
   }
 
@@ -315,7 +335,7 @@ body {
     }
 
     button {
-      border-top: 1px solid $main-white;
+      transition: all .5s ease-in-out;
     }
   }
 }
@@ -326,6 +346,7 @@ body {
   font-weight: 400;
   font-family: "BN Chester";
   color: $main-black;
+  transition: color 0.5s ease-in-out;
 }
 
 // Testimonials
@@ -453,29 +474,5 @@ body {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes pulsating-effect-on {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
-  }
-
-  100% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px $main-orange;
-  }
-}
-
-@keyframes pulsating-effect-off {
-  0% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 2px $main-orange;
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px transparent;
   }
 }
