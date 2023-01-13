@@ -13,32 +13,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myproject.idstudio.dao.CallDao;
 import com.myproject.idstudio.models.Call;
-import com.myproject.idstudio.security.PageSecurity;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		try {
-			if (new PageSecurity().isSecure(request, response)) {
-				List<Call> list = CallDao.getInstance().getCalls();
-				request.getSession().setAttribute("list", list);
-				request.getRequestDispatcher("WEB-INF/view/admin.jsp").forward(request, response);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            List<Call> list = CallDao.getInstance().getCalls();
+            request.getSession().setAttribute("list", list);
+            request.getRequestDispatcher("/WEB-INF/view/admin.jsp").forward(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		try {
-			if (new PageSecurity().isSecure(request, response)) {
-				CallDao.getInstance().removeCall(Integer.parseInt(request.getParameter("callIdToDelete")));
-			}
-		} catch (NumberFormatException | SQLException e) {
-			e.printStackTrace();
-		}
-		doGet(request, response);
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            CallDao.getInstance().removeCall(Integer.parseInt(request.getParameter("callIdToDelete")));
+        } catch (NumberFormatException | SQLException e) {
+            e.printStackTrace();
+        }
+        doGet(request, response);
+    }
 }
