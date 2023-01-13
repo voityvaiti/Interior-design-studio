@@ -1,6 +1,9 @@
 import { aboutStudioReveal } from "../animations/about-studio/aboutStudio.js";
 import { ourServicesReveal } from "../animations/our-services/ourServices.js";
 import { ourPortfolioReveal } from "../animations/our-portfolio/ourPortfolio.js";
+import { ourPricingReveal, selectPricingCard } from "../animations/our-pricing/ourPricing.js";
+import { pricingCardsHover } from "../animations/our-pricing/pricingCardsHover.js";
+import { testimonialsSectionHeaderReveal } from "../animations/what-people-say/whatPeopleSay.js";
 
 export function addScrollListener(breakpoint) {
   const hero = document.querySelector(".hero");
@@ -9,6 +12,8 @@ export function addScrollListener(breakpoint) {
     ".about-studio-more-container"
   );
   const ourServicesSection = document.querySelector(".our-services-section");
+  const ourPortfolioSection = document.querySelector(".our-portfolio-section");
+  const ourPricingSection = document.querySelector(".our-pricing-section");
   window.addEventListener("scroll", () => {
     let scrollYPosition = scrollY;
     console.log(scrollYPosition);
@@ -59,6 +64,19 @@ export function addScrollListener(breakpoint) {
         ) {
           ourPortfolioReveal("xs");
         }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("xs");
+          selectPricingCard()
+        }
+        if (
+          scrollYPosition >=
+          ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
+        ) {
+          testimonialsSectionHeaderReveal();
+        }
         break;
       case "xs-2":
         if (scrollYPosition >= hero.offsetHeight / 2) {
@@ -105,6 +123,19 @@ export function addScrollListener(breakpoint) {
               ourServicesSection.offsetHeight / 6)
         ) {
           ourPortfolioReveal("xs");
+        }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("xs");
+          selectPricingCard()
+        }
+        if (
+          scrollYPosition >=
+          ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
+        ) {
+          testimonialsSectionHeaderReveal();
         }
         break;
       case "xs-3":
@@ -153,8 +184,20 @@ export function addScrollListener(breakpoint) {
         ) {
           ourPortfolioReveal("xs");
         }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("xs");
+          selectPricingCard()
+        }
+        if (
+          scrollYPosition >=
+          ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
+        ) {
+          testimonialsSectionHeaderReveal();
+        }
         break;
-
       case "sm":
         if (scrollYPosition >= hero.offsetHeight / 2) {
           ourServicesReveal("sm");
@@ -164,6 +207,16 @@ export function addScrollListener(breakpoint) {
           aboutStudioSection.offsetTop + aboutStudioSection.offsetHeight / 2
         ) {
           ourPortfolioReveal("sm");
+        }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("sm");
+          selectPricingCard()
+        }
+        if (scrollYPosition >= ourPricingSection.offsetTop) {
+          testimonialsSectionHeaderReveal();
         }
         break;
       case "md":
@@ -175,6 +228,16 @@ export function addScrollListener(breakpoint) {
           aboutStudioSection.offsetTop + aboutStudioSection.offsetHeight / 2
         ) {
           ourPortfolioReveal("md");
+        }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("md");
+          selectPricingCard()
+        }
+        if (scrollYPosition >= ourPricingSection.offsetTop) {
+          testimonialsSectionHeaderReveal();
         }
         break;
       case "lg":
@@ -188,9 +251,19 @@ export function addScrollListener(breakpoint) {
           scrollYPosition >=
           ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 2
         ) {
-          ourPortfolioReveal('lg')
+          ourPortfolioReveal("lg");
         }
-          break;
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("lg");
+          selectPricingCard()
+        }
+        if (scrollYPosition >= ourPricingSection.offsetTop) {
+          testimonialsSectionHeaderReveal();
+        }
+        break;
       case "xl":
         if (scrollYPosition >= hero.offsetHeight / 2) {
           aboutStudioReveal("xl");
@@ -202,7 +275,18 @@ export function addScrollListener(breakpoint) {
           scrollYPosition >=
           ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 2
         ) {
-          ourPortfolioReveal('xl')
+          ourPortfolioReveal("xl");
+        }
+        if (
+          scrollYPosition >=
+          ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
+        ) {
+          ourPricingReveal("xl");
+          pricingCardsHover();
+          selectPricingCard()
+        }
+        if (scrollYPosition >= ourPricingSection.offsetTop) {
+          testimonialsSectionHeaderReveal();
         }
         break;
     }
