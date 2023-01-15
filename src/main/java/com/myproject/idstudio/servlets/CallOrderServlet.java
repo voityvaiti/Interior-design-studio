@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolation;
-import javax.validation.Validation;;
+import javax.validation.Validation;
+import javax.validation.ValidatorFactory;;
 import com.myproject.idstudio.dao.CallDao;
 import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Call;
@@ -31,8 +32,9 @@ public class CallOrderServlet extends HttpServlet {
         session.setAttribute("name", name);
         session.setAttribute("number", number);
 
-        Set<ConstraintViolation<Call>> errors = Validation.buildDefaultValidatorFactory().
-                getValidator().validate(new Call(name, number));
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        Set<ConstraintViolation<Call>> errors = validatorFactory.getValidator().
+                validate(new Call(name, number));
         if(errors.isEmpty()) {
             try {
                 CallDao.getInstance().addCall(new Call(name, number));
@@ -49,5 +51,6 @@ public class CallOrderServlet extends HttpServlet {
             doGet(request, response);
             session.removeAttribute("callOrderErrorMessage");
         }
+        validatorFactory.close();
     }
 }
