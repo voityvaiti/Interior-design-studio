@@ -172,11 +172,11 @@
     </div>
     <div class="tabs-container container-fluid">
       <div class="tabs d-flex justify-content-between">
-        <p class="mb-0" id="our-portfolio-all">ALL</p>
-        <p class="mb-0 mx-1" id="our-portfolio-commercial">COMMERCIAL</p>
-        <p class="mb-0" id="our-portfolio-residental">RESIDENTAL</p>
-        <p class="mb-0 mx-1" id="our-portfolio-office">OFFICE</p>
-        <p class="mb-0" id="our-portfolio-other">OTHER</p>
+        <p class="mb-0" id="filter">ALL</p>
+        <p class="mb-0 mx-1" id="filter">COMMERCIAL</p>
+        <p class="mb-0" id="filter">RESIDENTAL</p>
+        <p class="mb-0 mx-1" id="filter">OFFICE</p>
+        <p class="mb-0" id="filter">OTHER</p>
       </div>
       <a class="more px-0" id="tabs-container-more" href="#">VIEW MORE</a>
     </div>
@@ -184,42 +184,50 @@
     <div class="gallery row mx-0">
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-1" src="images/gallery/img (1).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (1).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-2" src="images/gallery/img (2).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (2).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-3" src="images/gallery/img (3).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (3).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-4" src="images/gallery/img (4).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (4).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-5" src="images/gallery/img (5).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (5).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-6" src="images/gallery/img (6).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (6).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-7" src="images/gallery/img (7).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (7).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-0">
         <div class="card h-100">
-          <img class="card-img-top h-100 w-100" id="gallery-img-8" src="images/gallery/img (8).svg" alt="" draggable="false">
+          <img class="card-img-top h-100 w-100" id="gallery-img" src="images/gallery/img (8).svg" alt=""
+            draggable="false">
         </div>
       </div>
       <a class="more px-0" href="#">VIEW MORE</a>
@@ -583,10 +591,12 @@
   </section>
   <section class="question-section row container-fluid mx-0">
     <div class="col-8 col-md-4 col-lg-3 px-0">
-      <h2 class="section-header">Do you have <br><span>any question?</span></h2>
+      <h2 class="section-header" id="question-section-header">Do you have <br><span>any question?</span></h2>
     </div>
     <div class="col-sm-6 col-md-2 px-0">
-      <button type="button" class="get-started-button main-btn">ORDER A CALL</button>
+      <a href="orderCall.html">
+        <button type="button" class="get-started-button main-btn" id="order-a-call-button">ORDER A CALL</button>
+      </a>
     </div>
   </section>
   <footer class="row mx-0">

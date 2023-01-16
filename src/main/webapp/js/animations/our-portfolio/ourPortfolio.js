@@ -1,3 +1,5 @@
+import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
+
 let wasInvoked = false;
 export function ourPortfolioReveal(breakpoint) {
   if (!wasInvoked) {
@@ -5,45 +7,26 @@ export function ourPortfolioReveal(breakpoint) {
       "our-portfolio-section-header"
     );
     const tabsContainerMore = document.getElementById("tabs-container-more");
-    const filters = [
-      document.getElementById("our-portfolio-all"),
-      document.getElementById("our-portfolio-commercial"),
-      document.getElementById("our-portfolio-residental"),
-      document.getElementById("our-portfolio-office"),
-      document.getElementById("our-portfolio-other"),
-    ];
-    const galleryImages = [
-      document.getElementById("gallery-img-1"),
-      document.getElementById("gallery-img-2"),
-      document.getElementById("gallery-img-3"),
-      document.getElementById("gallery-img-4"),
-      document.getElementById("gallery-img-5"),
-      document.getElementById("gallery-img-6"),
-      document.getElementById("gallery-img-7"),
-      document.getElementById("gallery-img-8"),
-    ];
+    const filters = document.querySelectorAll("#filter");
+    const galleryImages = document.querySelectorAll("#gallery-img");
     let filterTimeReveal = 0;
     let galleryImagesTimeReveal = 400;
     if (breakpoint === "xs") {
-      ourPortfolioSectionHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      ourPortfolioSectionHeader.style.opacity = "1";
-      for (let filter of filters) {
+      revealIntoDirection(ourPortfolioSectionHeader, "right");
+      for (let i = 0; i < filters.length; i++) {
         setTimeout(() => {
-          filter.style.animation = "reveal-to-top 1s ease-in-out";
-          filter.style.opacity = "1";
+          revealIntoDirection(filters[i], "right");
         }, filterTimeReveal);
-        filterTimeReveal += 200;
+        filterTimeReveal += 100;
       }
-      for (let image of galleryImages) {
-        if (image.id === "gallery-img-4") {
+      for (let i = 0; i < galleryImages.length; i++) {
+        if (galleryImages[i].id === "gallery-img-4") {
           break;
         }
         setTimeout(() => {
-          image.style.animation = "reveal-to-right 1s ease-in-out";
-          image.style.opacity = "1";
+          revealIntoDirection(galleryImages[i], "right");
         }, galleryImagesTimeReveal);
-        galleryImagesTimeReveal += 200;
+        galleryImagesTimeReveal += 100;
       }
     } else if (
       breakpoint === "sm" ||
@@ -51,24 +34,19 @@ export function ourPortfolioReveal(breakpoint) {
       breakpoint === "lg" ||
       breakpoint === "xl"
     ) {
-      ourPortfolioSectionHeader.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      ourPortfolioSectionHeader.style.opacity = "1";
-      for (let filter of filters) {
+      revealIntoDirection(ourPortfolioSectionHeader, "top");
+      for (let i = 0; i < filters.length; i++) {
         setTimeout(() => {
-          filter.style.animation = "reveal-to-top 1s ease-in-out";
-          filter.style.opacity = "1";
+          revealIntoDirection(filters[i], "top");
         }, filterTimeReveal);
         filterTimeReveal += 100;
       }
       setTimeout(() => {
-        tabsContainerMore.style.animation = "reveal-to-top 1s ease-in-out";
-        tabsContainerMore.style.opacity = "1";
-      }, 1000);
-      for (let image of galleryImages) {
+        revealIntoDirection(tabsContainerMore, "top");
+      }, 600);
+      for (let i = 0; i < galleryImages.length; i++) {
         setTimeout(() => {
-          image.style.animation = "reveal-to-top 1s ease-in-out";
-          image.style.opacity = "1";
+          revealIntoDirection(galleryImages[i], "top");
         }, galleryImagesTimeReveal);
         galleryImagesTimeReveal += 100;
       }

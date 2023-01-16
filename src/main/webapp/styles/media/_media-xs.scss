@@ -216,6 +216,7 @@
     width: 100%;
     background-color: $main-orange;
     border: none;
+    border-top: 1px solid $main-orange !important;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     font-weight: 700;
@@ -224,7 +225,7 @@
 
   .active {
     button {
-      border-top: 1px solid $main-white;
+      border-top: 1px solid $main-white !important;
     }
   }
 

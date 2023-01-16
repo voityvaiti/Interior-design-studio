@@ -1,3 +1,4 @@
+import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
 let wasInvoked = false;
 
 export function aboutStudioReveal(breakpoint) {
@@ -20,8 +21,7 @@ export function aboutStudioReveal(breakpoint) {
       aboutStudioMoreContainer.classList.toggle(`reveal-text-${breakpoint}`);
     });
 
-    aboutStudioSectionHeader.style.animation = "reveal-to-left 1s ease-in-out";
-    aboutStudioSectionHeader.style.opacity = "1";
+    revealIntoDirection(aboutStudioSectionHeader, "left");
 
     if (
       breakpoint === "xs-1" ||
@@ -31,22 +31,18 @@ export function aboutStudioReveal(breakpoint) {
       breakpoint === "md"
     ) {
       setTimeout(() => {
-        aboutStudioMainText.style.animation = "reveal-to-right 1s ease-in-out";
-        aboutStudioMainText.style.opacity = "1";
+        revealIntoDirection(aboutStudioMainText, "right");
       }, 200);
     } else {
       setTimeout(() => {
-        aboutStudioMainText.style.animation = "reveal-to-bottom 1s ease-in-out";
-        aboutStudioMainText.style.opacity = "1";
+        revealIntoDirection(aboutStudioMainText, "bottom");
 
-        aboutStudioMoreTextLg.style.animation = "reveal-to-top 1s ease-in-out";
-        aboutStudioMoreTextLg.style.opacity = "1";
+        revealIntoDirection(aboutStudioMoreTextLg, "top");
       }, 200);
     }
 
     setTimeout(() => {
-      aboutStudioMore.style.animation = "reveal-to-left 1s ease-in-out";
-      aboutStudioMore.style.opacity = "1";
+      revealIntoDirection(aboutStudioMore, "left");
     }, 400);
 
     wasInvoked = true;

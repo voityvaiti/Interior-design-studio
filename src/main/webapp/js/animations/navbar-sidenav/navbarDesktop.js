@@ -1,3 +1,4 @@
+import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
 export function animateNavbarDesktop() {
   // Getting access to desktop navbar elements
   const logo = document.querySelector(".logo");
@@ -6,29 +7,21 @@ export function animateNavbarDesktop() {
 
   /* Separately for each navbar element applying 
   animation in certain intervals */
-  logo.style.animation = "reveal-to-left 1s ease-in-out";
-  logo.style.opacity = 1;
+  revealIntoDirection(logo, "left");
 
   setTimeout(() => {
-    headerLink[0].style.animation = "reveal-to-left 1s ease-in-out";
-    headerLink[0].style.opacity = 1;
+    revealIntoDirection(headerLink[0], "left");
   }, 200);
   setTimeout(() => {
-    headerLink[1].style.animation = "reveal-to-left 1s ease-in-out";
-    headerLink[1].style.opacity = 1;
+    revealIntoDirection(headerLink[1], "left");
   }, 400);
   setTimeout(() => {
-    headerLink[2].style.animation = "reveal-to-left 1s ease-in-out";
-    headerLink[2].style.opacity = 1;
+    revealIntoDirection(headerLink[2], "left");
   }, 600);
   setTimeout(() => {
-    headerRightSection.children[0].style.animation =
-      "reveal-to-left 1s ease-in-out";
-    headerRightSection.children[0].style.opacity = 1;
+    revealIntoDirection(headerRightSection.children[0], "left");
   }, 800);
   setTimeout(() => {
-    headerRightSection.children[1].style.animation =
-      "reveal-to-left 1s ease-in-out";
-    headerRightSection.children[1].style.opacity = 1;
+    revealIntoDirection(headerRightSection.children[1], "left");
   }, 1000);
 }
