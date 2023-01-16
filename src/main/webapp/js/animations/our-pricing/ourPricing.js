@@ -1,3 +1,5 @@
+import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
+
 const ourPricingInvoking = {
   reveal: false,
   select: false,
@@ -14,23 +16,18 @@ export function ourPricingReveal(breakpoint) {
     ];
     let cardTimeReveal = 200;
     if (breakpoint === "xs") {
-      ourPricingSectionHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      ourPricingSectionHeader.style.opacity = "1";
+      revealIntoDirection(ourPricingSectionHeader, "right");
       for (let card of pricingCards) {
         setTimeout(() => {
-          card.style.animation = "reveal-to-right 1s ease-in-out";
-          card.style.opacity = "1";
+          revealIntoDirection(card, "right");
         }, cardTimeReveal);
         cardTimeReveal += 200;
       }
     } else {
-      ourPricingSectionHeader.style.animation = "reveal-to-top 1s ease-in-out";
-      ourPricingSectionHeader.style.opacity = "1";
+      revealIntoDirection(ourPricingSectionHeader, "top");
       for (let card of pricingCards) {
         setTimeout(() => {
-          card.style.animation = "reveal-to-top 1s ease-in-out";
-          card.style.opacity = "1";
+          revealIntoDirection(card, "top");
         }, cardTimeReveal);
         cardTimeReveal += 200;
       }

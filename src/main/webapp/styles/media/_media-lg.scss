@@ -141,12 +141,12 @@
     width: 140px;
     margin: 50px 0px 30px;
     background-color: transparent;
-    border: $button-border;
+    border: $button-border !important;
     border-radius: 8px;
     color: $main-black;
   }
   .active .buy-now-button {
-    border: $button-border;
+    border: $button-border !important;
     background-color: $main-white;
   }
 

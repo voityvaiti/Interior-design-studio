@@ -1,3 +1,5 @@
+import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
+
 const ourServicesCardsInvoking = {
   design: false,
   services: false,
@@ -42,68 +44,50 @@ function interiorDesignReveal(breakpoint) {
     "interior-design-card-description"
   );
   if (breakpoint === "xs") {
-    ourServicesSectionHeader.style.animation = "reveal-to-right 1s ease-in-out";
-    ourServicesSectionHeader.style.opacity = "1";
+    revealIntoDirection(ourServicesSectionHeader, "right");
 
     setTimeout(() => {
-      interiorDesignCardIcon.style.animation = "reveal-to-right 1s ease-in-out";
-      interiorDesignCardIcon.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardIcon, "right");
     }, 200);
 
     setTimeout(() => {
-      interiorDesignCardHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      interiorDesignCardHeader.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardHeader, "right");
     }, 400);
 
     setTimeout(() => {
-      interiorDesignCardDescription.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      interiorDesignCardDescription.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardDescription, "right");
     }, 600);
   } else if (
     breakpoint === "sm" ||
     breakpoint === "md" ||
     breakpoint === "lg"
   ) {
-    ourServicesSectionHeader.style.animation = "reveal-to-top 1s ease-in-out";
-    ourServicesSectionHeader.style.opacity = "1";
+    revealIntoDirection(ourServicesSectionHeader, "top");
 
     setTimeout(() => {
-      interiorDesignCardIcon.style.animation = "reveal-to-top 1s ease-in-out";
-      interiorDesignCardIcon.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardIcon, "top");
     }, 200);
 
     setTimeout(() => {
-      interiorDesignCardHeader.style.animation = "reveal-to-top 1s ease-in-out";
-      interiorDesignCardHeader.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardHeader, "top");
     }, 400);
 
     setTimeout(() => {
-      interiorDesignCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      interiorDesignCardDescription.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardDescription, "top");
     }, 600);
   } else {
-    ourServicesSectionHeader.style.animation = "reveal-to-top 1s ease-in-out";
-    ourServicesSectionHeader.style.opacity = "1";
+    revealIntoDirection(ourServicesSectionHeader, "top");
 
     setTimeout(() => {
-      interiorDesignCardIcon.style.animation =
-        "reveal-to-bottom 1s ease-in-out";
-      interiorDesignCardIcon.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardIcon, "bottom");
     }, 300);
 
     setTimeout(() => {
-      interiorDesignCardHeader.style.animation =
-        "reveal-to-bottom 1s ease-in-out";
-      interiorDesignCardHeader.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardHeader, "bottom");
     }, 200);
 
     setTimeout(() => {
-      interiorDesignCardDescription.style.animation =
-        "reveal-to-bottom 1s ease-in-out";
-      interiorDesignCardDescription.style.opacity = "1";
+      revealIntoDirection(interiorDesignCardDescription, "bottom");
     }, 100);
   }
   ourServicesCardsInvoking.design = true;
@@ -123,25 +107,18 @@ function decorativeServicesReveal(breakpoint) {
     "decorative-services-card-description"
   );
   if (breakpoint === "xs") {
-    servicesSplittingLine.style.animation = "reveal-to-right 1s ease-in-out";
-    servicesSplittingLine.style.opacity = "1";
+    revealIntoDirection(servicesSplittingLine, "right");
 
     setTimeout(() => {
-      decorativeServicesCardIcon.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      decorativeServicesCardIcon.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardIcon, "right");
     }, 200);
 
     setTimeout(() => {
-      decorativeServicesCardHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      decorativeServicesCardHeader.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardHeader, "right");
     }, 400);
 
     setTimeout(() => {
-      decorativeServicesCardDescription.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      decorativeServicesCardDescription.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardDescription, "right");
     }, 600);
   } else if (
     breakpoint === "sm" ||
@@ -149,39 +126,27 @@ function decorativeServicesReveal(breakpoint) {
     breakpoint === "lg"
   ) {
     setTimeout(() => {
-      decorativeServicesCardIcon.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardIcon.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardIcon, "top");
     }, 200);
 
     setTimeout(() => {
-      decorativeServicesCardHeader.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardHeader.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardHeader, "top");
     }, 400);
 
     setTimeout(() => {
-      decorativeServicesCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardDescription.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardDescription, "top");
     }, 600);
   } else {
     setTimeout(() => {
-      decorativeServicesCardIcon.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardIcon.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardIcon, "top");
     }, 400);
 
     setTimeout(() => {
-      decorativeServicesCardHeader.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardHeader.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardHeader, "top");
     }, 500);
 
     setTimeout(() => {
-      decorativeServicesCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      decorativeServicesCardDescription.style.opacity = "1";
+      revealIntoDirection(decorativeServicesCardDescription, "top");
     }, 600);
   }
   ourServicesCardsInvoking.services = true;
@@ -201,24 +166,18 @@ function spacePlanningReveal(breakpoint) {
     "space-planning-card-description"
   );
   if (breakpoint === "xs") {
-    planningSplittingLine.style.animation = "reveal-to-right 1s ease-in-out";
-    planningSplittingLine.style.opacity = "1";
+    revealIntoDirection(planningSplittingLine, "right");
 
     setTimeout(() => {
-      spacePlanningCardIcon.style.animation = "reveal-to-right 1s ease-in-out";
-      spacePlanningCardIcon.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardIcon, "right");
     }, 200);
 
     setTimeout(() => {
-      spacePlanningCardHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      spacePlanningCardHeader.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardHeader, "right");
     }, 400);
 
     setTimeout(() => {
-      spacePlanningCardDescription.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      spacePlanningCardDescription.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardDescription, "right");
     }, 600);
   } else if (
     breakpoint === "sm" ||
@@ -226,36 +185,27 @@ function spacePlanningReveal(breakpoint) {
     breakpoint === "lg"
   ) {
     setTimeout(() => {
-      spacePlanningCardIcon.style.animation = "reveal-to-top 1s ease-in-out";
-      spacePlanningCardIcon.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardIcon, "top");
     }, 800);
 
     setTimeout(() => {
-      spacePlanningCardHeader.style.animation = "reveal-to-top 1s ease-in-out";
-      spacePlanningCardHeader.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardHeader, "top");
     }, 1000);
 
     setTimeout(() => {
-      spacePlanningCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      spacePlanningCardDescription.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardDescription, "top");
     }, 1200);
   } else {
     setTimeout(() => {
-      spacePlanningCardIcon.style.animation = "reveal-to-bottom 1s ease-in-out";
-      spacePlanningCardIcon.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardIcon, "bottom");
     }, 900);
 
     setTimeout(() => {
-      spacePlanningCardHeader.style.animation =
-        "reveal-to-bottom 1s ease-in-out";
-      spacePlanningCardHeader.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardHeader, "bottom");
     }, 800);
 
     setTimeout(() => {
-      spacePlanningCardDescription.style.animation =
-        "reveal-to-bottom 1s ease-in-out";
-      spacePlanningCardDescription.style.opacity = "1";
+      revealIntoDirection(spacePlanningCardDescription, "bottom");
     }, 700);
   }
   ourServicesCardsInvoking.services = true;
@@ -276,25 +226,18 @@ function projectManagementReveal(breakpoint) {
   );
   const consultationButton = document.getElementById("consultation-button");
   if (breakpoint === "xs") {
-    managementSplittingLine.style.animation = "reveal-to-right 1s ease-in-out";
-    managementSplittingLine.style.opacity = "1";
+    revealIntoDirection(managementSplittingLine, "right");
 
     setTimeout(() => {
-      projectManagementCardIcon.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      projectManagementCardIcon.style.opacity = "1";
+      revealIntoDirection(projectManagementCardIcon, "right");
     }, 200);
 
     setTimeout(() => {
-      projectManagementCardHeader.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      projectManagementCardHeader.style.opacity = "1";
+      revealIntoDirection(projectManagementCardHeader, "right");
     }, 400);
 
     setTimeout(() => {
-      projectManagementCardDescription.style.animation =
-        "reveal-to-right 1s ease-in-out";
-      projectManagementCardDescription.style.opacity = "1";
+      revealIntoDirection(projectManagementCardDescription, "right");
     }, 600);
   } else if (
     breakpoint === "sm" ||
@@ -302,43 +245,30 @@ function projectManagementReveal(breakpoint) {
     breakpoint === "lg"
   ) {
     setTimeout(() => {
-      projectManagementCardIcon.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardIcon.style.opacity = "1";
+      revealIntoDirection(projectManagementCardIcon, "top");
     }, 800);
 
     setTimeout(() => {
-      projectManagementCardHeader.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardHeader.style.opacity = "1";
+      revealIntoDirection(projectManagementCardHeader, "top");
     }, 1000);
 
     setTimeout(() => {
-      projectManagementCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardDescription.style.opacity = "1";
+      revealIntoDirection(projectManagementCardDescription, "top");
     }, 1200);
   } else {
     setTimeout(() => {
-      projectManagementCardIcon.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardIcon.style.opacity = "1";
+      revealIntoDirection(projectManagementCardIcon, "top");
     }, 1000);
 
     setTimeout(() => {
-      projectManagementCardHeader.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardHeader.style.opacity = "1";
+      revealIntoDirection(projectManagementCardHeader, "top");
     }, 1100);
 
     setTimeout(() => {
-      projectManagementCardDescription.style.animation =
-        "reveal-to-top 1s ease-in-out";
-      projectManagementCardDescription.style.opacity = "1";
+      revealIntoDirection(projectManagementCardDescription, "top");
     }, 1200);
     setTimeout(() => {
-      consultationButton.style.animation = "reveal-to-top 1s ease-in-out";
-      consultationButton.style.opacity = "1";
+      revealIntoDirection(consultationButton, "top");
     }, 1300);
   }
   ourServicesCardsInvoking.services = true;

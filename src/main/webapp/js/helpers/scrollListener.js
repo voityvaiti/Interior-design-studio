@@ -1,9 +1,13 @@
 import { aboutStudioReveal } from "../animations/about-studio/aboutStudio.js";
 import { ourServicesReveal } from "../animations/our-services/ourServices.js";
 import { ourPortfolioReveal } from "../animations/our-portfolio/ourPortfolio.js";
-import { ourPricingReveal, selectPricingCard } from "../animations/our-pricing/ourPricing.js";
+import {
+  ourPricingReveal,
+  selectPricingCard,
+} from "../animations/our-pricing/ourPricing.js";
 import { pricingCardsHover } from "../animations/our-pricing/pricingCardsHover.js";
 import { testimonialsSectionHeaderReveal } from "../animations/what-people-say/whatPeopleSay.js";
+import { questionSectionReveal } from "../animations/question-section/questionSection.js";
 
 export function addScrollListener(breakpoint) {
   const hero = document.querySelector(".hero");
@@ -14,6 +18,8 @@ export function addScrollListener(breakpoint) {
   const ourServicesSection = document.querySelector(".our-services-section");
   const ourPortfolioSection = document.querySelector(".our-portfolio-section");
   const ourPricingSection = document.querySelector(".our-pricing-section");
+  const testimonialsSection = document.querySelector(".testimonials-section");
+  const questionSection = document.querySelector(".question-section");
   window.addEventListener("scroll", () => {
     let scrollYPosition = scrollY;
     console.log(scrollYPosition);
@@ -69,13 +75,16 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("xs");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (
           scrollYPosition >=
           ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
         ) {
           testimonialsSectionHeaderReveal();
+        }
+        if (scrollYPosition >= testimonialsSection.offsetTop) {
+          questionSectionReveal("xs");
         }
         break;
       case "xs-2":
@@ -129,13 +138,16 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("xs");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (
           scrollYPosition >=
           ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
         ) {
           testimonialsSectionHeaderReveal();
+        }
+        if (scrollYPosition >= testimonialsSection.offsetTop) {
+          questionSectionReveal("xs");
         }
         break;
       case "xs-3":
@@ -189,13 +201,16 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("xs");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (
           scrollYPosition >=
           ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
         ) {
           testimonialsSectionHeaderReveal();
+        }
+        if (scrollYPosition >= testimonialsSection.offsetTop) {
+          questionSectionReveal("xs");
         }
         break;
       case "sm":
@@ -213,10 +228,16 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("sm");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (scrollYPosition >= ourPricingSection.offsetTop) {
           testimonialsSectionHeaderReveal();
+        }
+        if (
+          scrollYPosition >=
+          ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
+        ) {
+          questionSectionReveal("sm");
         }
         break;
       case "md":
@@ -234,14 +255,20 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("md");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (scrollYPosition >= ourPricingSection.offsetTop) {
           testimonialsSectionHeaderReveal();
         }
+        if (
+          scrollYPosition >=
+          ourPricingSection.offsetTop + ourPricingSection.offsetHeight / 2
+        ) {
+          questionSectionReveal("md");
+        }
         break;
       case "lg":
-        if (scrollYPosition >= hero.offsetHeight / 2) {
+        if (scrollYPosition >= hero.offsetHeight / 3) {
           aboutStudioReveal("lg");
         }
         if (scrollYPosition >= hero.offsetHeight) {
@@ -249,7 +276,7 @@ export function addScrollListener(breakpoint) {
         }
         if (
           scrollYPosition >=
-          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 2
+          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 3
         ) {
           ourPortfolioReveal("lg");
         }
@@ -258,14 +285,17 @@ export function addScrollListener(breakpoint) {
           ourPortfolioSection.offsetTop + ourPortfolioSection.offsetHeight / 2
         ) {
           ourPricingReveal("lg");
-          selectPricingCard()
+          selectPricingCard();
         }
         if (scrollYPosition >= ourPricingSection.offsetTop) {
           testimonialsSectionHeaderReveal();
         }
+        if (scrollYPosition >= testimonialsSection.offsetTop) {
+          questionSectionReveal("lg");
+        }
         break;
       case "xl":
-        if (scrollYPosition >= hero.offsetHeight / 2) {
+        if (scrollYPosition >= hero.offsetHeight / 3) {
           aboutStudioReveal("xl");
         }
         if (scrollYPosition >= hero.offsetHeight) {
@@ -273,7 +303,7 @@ export function addScrollListener(breakpoint) {
         }
         if (
           scrollYPosition >=
-          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 2
+          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 3
         ) {
           ourPortfolioReveal("xl");
         }
@@ -283,10 +313,13 @@ export function addScrollListener(breakpoint) {
         ) {
           ourPricingReveal("xl");
           pricingCardsHover();
-          selectPricingCard()
+          selectPricingCard();
         }
         if (scrollYPosition >= ourPricingSection.offsetTop) {
           testimonialsSectionHeaderReveal();
+        }
+        if (scrollYPosition >= testimonialsSection.offsetTop) {
+          questionSectionReveal("xl");
         }
         break;
     }
