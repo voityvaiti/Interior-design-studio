@@ -27,8 +27,8 @@ public class CallOrderServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String name = request.getParameter("name");
-        String number = request.getParameter("number");
+        String name = request.getParameter("name").trim();
+        String number = request.getParameter("number").trim();
 
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         Set<ConstraintViolation<Call>> errors = validatorFactory.getValidator().

@@ -54,6 +54,19 @@ public class CustomerDao {
         return new Customer(id, firstName, lastName, telNumber);
     }
 
+    public Customer getSpecificCustomer(String telNumber) throws SQLException {
+        PreparedStatement getCustomerStatement =
+                connection.prepareStatement("SELECT * FROM customers WHERE tel_number=?");
+        getCustomerStatement.setString(1, telNumber);
+        ResultSet customerResultSet = getCustomerStatement.executeQuery();
+
+        customerResultSet.next();
+        int id = customerResultSet.getInt("id");
+        String firstName = customerResultSet.getString("first_name");
+        String lastName = customerResultSet.getString("last_name");
+        return new Customer(id, firstName, lastName, telNumber);
+    }
+
     public void addCustomer(Customer customer) throws SQLException {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("INSERT INTO customers (first_name, last_name, tel_number) VALUES (?, ?, ?)");
@@ -92,8 +105,8 @@ public class CustomerDao {
         return customerCheckStatement.executeQuery().next();
     }
 
-    //Alternative version of method putCustomer()
-    //    public void putCustomer(Customer customer) throws SQLException {
+//    Alternative version of method ensureCustomer()
+//        public void ensureCustomer(Customer customer) throws SQLException {
 //        if (customerExists(customer.getTelNumber())) {
 //            String firstName = customer.getFirstName();
 //            String lastName = customer.getLastName();
