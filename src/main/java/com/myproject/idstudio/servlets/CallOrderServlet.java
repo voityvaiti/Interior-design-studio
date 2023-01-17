@@ -19,7 +19,7 @@ import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Call;
 import com.myproject.idstudio.models.Customer;
 
-@WebServlet("/order")
+@WebServlet("/order-call")
 public class CallOrderServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/view/orderCall.jsp").forward(request, response);
@@ -29,8 +29,6 @@ public class CallOrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String name = request.getParameter("name");
         String number = request.getParameter("number");
-        session.setAttribute("name", name);
-        session.setAttribute("number", number);
 
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         Set<ConstraintViolation<Call>> errors = validatorFactory.getValidator().
@@ -38,7 +36,7 @@ public class CallOrderServlet extends HttpServlet {
         if(errors.isEmpty()) {
             try {
                 CallDao.getInstance().addCall(new Call(name, number));
-                CustomerDao.getInstance().addCustomer(new Customer(name, "", number));
+                CustomerDao.getInstance().ensureCustomer(new Customer(name, "", number));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
