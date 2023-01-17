@@ -24,7 +24,7 @@ public class CallDao {
 		return instance;
 	}
 	
-	private Connection connection = DatabaseConnector.getInstance().getConnection();
+	private final Connection connection = DatabaseConnector.getInstance().getConnection();
 
 	public List<Call> getCalls() throws SQLException {
 		ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM call_orders");
