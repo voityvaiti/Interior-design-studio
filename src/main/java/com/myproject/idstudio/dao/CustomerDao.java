@@ -10,6 +10,11 @@ import java.util.List;
 import com.myproject.idstudio.service.DatabaseConnector;
 import com.myproject.idstudio.models.Customer;
 
+/**
+ * In order not to violate the application logic, every customer must have unique telNumber.
+ * Methods force..() requires checking existence of customer with same telNumber as customer
+ * in method param(e.g. using method (customerExists())
+ */
 public class CustomerDao {
     private static CustomerDao instance;
 
@@ -67,7 +72,7 @@ public class CustomerDao {
         return new Customer(id, firstName, lastName, telNumber);
     }
 
-    public void addCustomer(Customer customer) throws SQLException {
+    public void forceAddCustomer(Customer customer) throws SQLException {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("INSERT INTO customers (first_name, last_name, tel_number) VALUES (?, ?, ?)");
         preparedStatement.setString(1, customer.getFirstName());
@@ -95,7 +100,17 @@ public class CustomerDao {
                 preparedStatement.executeUpdate();
             }
         }
-        else addCustomer(customer);
+        else forceAddCustomer(customer);
+    }
+
+    public void forceUpdateCustomer(Customer customer) throws SQLException {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("UPDATE customers SET (first_name=?, last_name=?, tel_number=?)  WHERE id=?");
+            preparedStatement.setString(1, customer.getFirstName());
+            preparedStatement.setString(2, customer.getLastName());
+            preparedStatement.setString(3, customer.getTelNumber());
+            preparedStatement.setInt(4, customer.getId());
+            preparedStatement.executeUpdate();
     }
 
     public boolean customerExists(String telNumber) throws SQLException {
