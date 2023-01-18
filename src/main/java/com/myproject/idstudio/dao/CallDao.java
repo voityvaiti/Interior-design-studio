@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.myproject.idstudio.models.Call;
+import com.myproject.idstudio.models.Customer;
 import com.myproject.idstudio.service.DatabaseConnector;
 
 public class CallDao {
@@ -29,12 +30,15 @@ public class CallDao {
 	public List<Call> getCalls() throws SQLException {
 		ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM call_orders");
 		List<Call> calls = new ArrayList<>();
+		CustomerDao customerDao = CustomerDao.getInstance();
 		
 		while(resultSet.next()) {
+			Customer customer = customerDao.
+					getSpecificCustomer(resultSet.getInt("customer_id"));
 			Call call = new Call(
 					resultSet.getInt("id"),
-					resultSet.getString("name"),
-					resultSet.getString("tel_number")
+					customer.getFirstName(),
+					customer.getTelNumber()
 					);
 			calls.add(call);	
 		}
@@ -42,10 +46,12 @@ public class CallDao {
 	}
 
 	public void addCall(Call call) throws SQLException {
+		CustomerDao customerDao = CustomerDao.getInstance();
+		customerDao.ensureCustomer(new Customer(call.getName(), "", call.getNumber()));
+
 		PreparedStatement preparedStatement = 
-				connection.prepareStatement("INSERT INTO call_orders (name, tel_number) VALUES (?, ?)");
-		preparedStatement.setString(1, call.getName());
-		preparedStatement.setString(2, call.getNumber());
+				connection.prepareStatement("INSERT INTO call_orders (customer_id) VALUES (?)");
+		preparedStatement.setInt(1, customerDao.getSpecificCustomer(call.getNumber()).getId());
 		preparedStatement.executeUpdate();
 	}
 
