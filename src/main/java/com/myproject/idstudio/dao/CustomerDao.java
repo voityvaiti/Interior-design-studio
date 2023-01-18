@@ -105,7 +105,7 @@ public class CustomerDao {
 
     public void forceUpdateCustomer(Customer customer) throws SQLException {
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("UPDATE customers SET (first_name=?, last_name=?, tel_number=?)  WHERE id=?");
+                    connection.prepareStatement("UPDATE customers SET first_name=?, last_name=?, tel_number=?  WHERE id=?");
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
             preparedStatement.setString(3, customer.getTelNumber());
