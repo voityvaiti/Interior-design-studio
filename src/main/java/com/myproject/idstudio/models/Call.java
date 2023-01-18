@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 public class Call {
 	private int id;
+	private int customerId;
 	@NotBlank(message = "Enter your name")
 	@Size(max = 20, message = "Too long name")
 	@Pattern(regexp = "^[A-Za-z][A-Za-z .'\\-]{1,}|^$|.{21,}", message = "Invalid name")
@@ -20,21 +21,24 @@ public class Call {
 		this.name = name;
 		this.number = number;
 	}
-	
-	public Call(int id, String name, String number) {
+	public Call(int id, int customerId, String name, String number) {
 		this.id = id;
+		this.customerId = customerId;
 		this.name = name;
 		this.number = number;
 	}
-	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
 	public String getName() {
 		return name;
 	}

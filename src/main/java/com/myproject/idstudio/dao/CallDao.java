@@ -37,6 +37,7 @@ public class CallDao {
 					getSpecificCustomer(resultSet.getInt("customer_id"));
 			Call call = new Call(
 					resultSet.getInt("id"),
+					customer.getId(),
 					customer.getFirstName(),
 					customer.getTelNumber()
 					);
