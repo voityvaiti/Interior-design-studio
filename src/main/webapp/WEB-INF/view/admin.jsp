@@ -21,7 +21,7 @@ if(list.size()<=0){%>
 }
 else {
 for(int i = 0; i< list.size(); i++) {%> 
-<%= list.get(i) %> 
+<%= list.get(i) %> <a href="<%=request.getContextPath()%>/admin/show-customer?id=<%= list.get(i).getCustomerId() %>">Show</a>
 <form name="deleteCallOrder" method="post" action="admin">
 <input type="hidden" name="callIdToDelete" value="<%= list.get(i).getId() %>"/>
 <input type="submit" value="Done" />

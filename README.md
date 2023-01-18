@@ -1,17 +1,19 @@
 # Interior-Design-Studio 
-Web App, realising functions of Business card site:
+Web App, realising functions of business card site:
 
 ### Backend 
-- Admin panel with single code authorization and ability to change it
-- Authorization code encryption
-- Call ordering with form validation
-- Call orders are shown in admin panel
+- Ability to order call
+- Admin panel with form-based authentication
+- Customer accounting 
+- Displaying and editing information about customers in admin panel
+- Validation of input fields with errors displaying
 
 ###### Technology stack:
-- Java Core
 - Java EE
 - JDBC
 - MySQL
+- Apache Tomcat
+- Hibernate Validator
 
 ### Frontend(by [DmitriyTruten](https://github.com/DmitriyTruten)):
 - Adaptive/Semantic layout

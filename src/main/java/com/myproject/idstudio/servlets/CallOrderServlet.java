@@ -36,7 +36,6 @@ public class CallOrderServlet extends HttpServlet {
         if(errors.isEmpty()) {
             try {
                 CallDao.getInstance().addCall(new Call(name, number));
-                CustomerDao.getInstance().ensureCustomer(new Customer(name, "", number));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
