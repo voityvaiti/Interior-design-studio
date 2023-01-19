@@ -35,13 +35,35 @@ public class EditCustomerServlet extends HttpServlet {
         int customerId = Integer.parseInt(request.getParameter("customerIdToEdit"));
         String firstName = request.getParameter("firstName").trim();
         String lastName = request.getParameter("lastName").trim();
-        String telNumber = request.getParameter("telNumber");
+        String telNumberBeforeEdit = request.getParameter("telNumberBeforeEdit").trim();
+        String telNumberAfterEdit = request.getParameter("telNumberAfterEdit").trim();
 
-            try {
-                CustomerDao.getInstance().forceUpdateCustomer(new Customer(customerId, firstName, lastName, telNumber));
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+        CustomerDao customerDao = CustomerDao.getInstance();
+        String editCustomerErrorMessage;
+
+        try {
+            boolean customerAlreadyExist = customerDao.customerExists(telNumberAfterEdit);
+            boolean customerWasChanged = !telNumberBeforeEdit.equals(telNumberAfterEdit);
+
+            if(customerAlreadyExist && customerWasChanged) {
+                editCustomerErrorMessage = "Customer with same telephone number is already exist";
+                request.getSession().setAttribute("editCustomerErrorMessage", editCustomerErrorMessage);
+                doGet(request, response);
+                request.getSession().removeAttribute("editCustomerErrorMessage");
+            } else if (customerAlreadyExist) {
+                customerDao.ensureCustomer(new Customer(firstName, lastName, telNumberBeforeEdit));
+                response.sendRedirect(request.getContextPath() + "/admin/show-customer?id=" + customerId);
+            } else if (customerWasChanged) {
+                customerDao.forceUpdateCustomer(new Customer(customerId, firstName, lastName, telNumberAfterEdit));
+                response.sendRedirect(request.getContextPath() + "/admin/show-customer?id=" + customerId);
+            } else {
+                editCustomerErrorMessage = "Error! Update page and try again";
+                request.getSession().setAttribute("editCustomerErrorMessage", editCustomerErrorMessage);
+                doGet(request, response);
+                request.getSession().removeAttribute("editCustomerErrorMessage");
             }
-            response.sendRedirect(request.getContextPath() + "/admin/show-customer?id=" + customerId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

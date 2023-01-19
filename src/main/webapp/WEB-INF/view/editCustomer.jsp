@@ -7,10 +7,10 @@
 <body>
 <% Customer customer = (Customer)request.getSession().getAttribute("customerToEdit"); %>
 <h1>Customer #<%= customer.getId() %> </h1>
-<p>Telephone number: <%=customer.getTelNumber()%></p><br>
 <form name="orderCall" method="post" action="edit-customer">
   <input type="hidden" name="customerIdToEdit" value="<%= customer.getId() %>"/>
-  <input type="hidden" name="telNumber" value="<%= customer.getTelNumber() %>"/>
+  <input type="hidden" name="telNumberBeforeEdit" value="<%= customer.getTelNumber() %>"/>
+  Telephone number: <input name="telNumberAfterEdit" type="text" maxlength="16" value="<%= customer.getTelNumber() %>"/><br>
   First name: <input name="firstName" type="text" maxlength="20" value="<%=customer.getFirstName()%>"/><br>
   Last name: <input name="lastName" type="text" maxlength="20" value="<%=customer.getLastName()%>"/><br>
   <input type="submit" value="Edit">
