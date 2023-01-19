@@ -21,7 +21,7 @@ public class CustomerServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         request.getSession().setAttribute("customer", customer);
-        request.getRequestDispatcher("/WEB-INF/view/customer.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/admin/customer.jsp").forward(request, response);
     }
 
     @Override
