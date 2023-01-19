@@ -8,11 +8,11 @@ import javax.validation.constraints.Size;
 public class Call {
 	private int id;
 	private int customerId;
-	@NotBlank(message = "Enter your name")
+	@NotBlank(message = "Field of name is empty")
 	@Size(max = 20, message = "Too long name")
 	@Pattern(regexp = "^[A-Za-z][A-Za-z .'\\-]{1,}|^$|.{21,}", message = "Invalid name")
 	private String name;
-	@NotBlank(message = "Enter your telephone number")
+	@NotBlank(message = "Field of telephone number is empty")
 	@Size(max = 16, message = "Too long telephone number")
 	@Pattern(regexp = "^\\+[0-9]{7,}|^$|.{17,}", message = "Invalid telephone number")
 	private String number;

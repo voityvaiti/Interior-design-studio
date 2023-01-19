@@ -20,11 +20,11 @@
     </h3>
     <div class="form-input-container row mx-0">
         <div class="form-name-container col-12 px-0">
-            <input class="input-field" type="text" id="name" name="name" value=""/>
+            <input class="input-field" type="text" id="name" name="name" value="" maxlength="20"/>
             <label class="name-label" for="name">Name</label>
         </div>
         <div class="form-phone-number-container col-12 px-0">
-            <input class="input-field number-input" type="tel" id="number" name="number" value=""/>
+            <input class="input-field number-input" type="tel" id="number" name="number" value="" maxlength="16"/>
             <label class="number-label" for="number"> Phone number</label>
             <span id="valid-message" class="hide">? Valid</span>
             <span id="error-message" class="hide">Invalid number</span>
