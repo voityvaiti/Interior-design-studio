@@ -63,4 +63,10 @@ public class CallDao {
 		preparedStatement.executeUpdate();
 	}
 
+	public int countCalls() throws SQLException {
+		ResultSet resultSet =
+				connection.createStatement().executeQuery("SELECT COUNT(*) AS amount FROM call_orders");
+		resultSet.next();
+		return resultSet.getInt("amount");
+	}
 }
