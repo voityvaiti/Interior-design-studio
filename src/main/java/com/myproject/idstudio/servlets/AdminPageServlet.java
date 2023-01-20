@@ -12,13 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.myproject.idstudio.dao.CallDao;
+import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Call;
 
 @WebServlet("/admin")
 public class AdminPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            request.getRequestDispatcher("/WEB-INF/view/admin/adminPage.jsp").forward(request, response);
+        try {
+            request.getSession().setAttribute("customersAmount", CustomerDao.getInstance().countCustomers());
+            request.getSession().setAttribute("callOrdersAmount", CallDao.getInstance().countCalls());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        request.getRequestDispatcher("/WEB-INF/view/admin/adminPage.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
