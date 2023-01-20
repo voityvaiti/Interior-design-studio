@@ -15,7 +15,7 @@ export function ourPortfolioReveal(breakpoint) {
       revealIntoDirection(ourPortfolioSectionHeader, "right");
       for (let i = 0; i < filters.length; i++) {
         setTimeout(() => {
-          revealIntoDirection(filters[i], "right");
+          revealIntoDirection(filters[i], "top");
         }, filterTimeReveal);
         filterTimeReveal += 100;
       }

@@ -24,6 +24,7 @@
 
   .header-right-section {
     display: flex;
+    align-items: center;
     a {
       text-decoration: none;
     }
@@ -33,6 +34,31 @@
     margin-left: 40px;
     font-weight: 500;
     opacity: 0;
+    position: relative;
+    img {
+      transition: transform .3s ease-in-out;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  .en-language,
+  .ua-language {
+    cursor: pointer;
+    display: flex;
+  }
+
+  .ua-language {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .en-language {
+    p {
+      margin-right: 5px;
+    }
   }
 
   .hamburger-container {

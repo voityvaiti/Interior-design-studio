@@ -8,9 +8,9 @@ export function questionSectionReveal(breakpoint) {
     );
     const orderCallButton = document.getElementById("order-a-call-button");
     if (breakpoint === "xs") {
-      revealIntoDirection(questionSectionHeader, 'top')
+      revealIntoDirection(questionSectionHeader, 'right')
       setTimeout(() => {
-        revealIntoDirection(orderCallButton, 'top')
+        revealIntoDirection(orderCallButton, 'right')
       }, 200);
     } else {
       revealIntoDirection(questionSectionHeader, 'right')

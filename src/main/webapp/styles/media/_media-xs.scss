@@ -1,4 +1,5 @@
 @import "../helpers/variables";
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 
 @media (min-width: 0px) {
   .navbar {
@@ -31,7 +32,7 @@
     padding: 80px 30px 30px 30px !important;
     h1 {
       font-size: 48px;
-      font-family: "BN Chester";
+      font-family: "BN Chester", "Philosopher";
       font-weight: 400;
       color: $hero-header-color;
     }
@@ -50,13 +51,20 @@
   .section-header {
     font-weight: 400;
     font-size: 32px;
-    font-family: "BN Chester";
+    font-family: "BN Chester", "Philosopher";
     margin: 0;
     span {
       font-weight: 400;
       font-size: 32px;
-      font-family: "BN Chester";
+      font-family: "BN Chester", "Philosopher";
       color: $main-orange;
+    }
+  }
+
+  .section-header-ua {
+    font-weight: 700;
+    span {
+      font-weight: 700;
     }
   }
 

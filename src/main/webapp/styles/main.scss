@@ -192,6 +192,9 @@ body {
 
 .main-btn {
   transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 2px $main-orange;
@@ -269,6 +272,10 @@ body {
   border: $button-border;
 }
 
+.redirect-to-order-page {
+  text-decoration: none !important;
+}
+
 // Our Pricing
 
 .our-pricing-section {
@@ -297,7 +304,7 @@ body {
         line-height: 180%;
         color: $main-black;
         font-weight: 500;
-        transition: color .5s ease-in-out;
+        transition: color 0.5s ease-in-out;
       }
     }
     p {
@@ -326,7 +333,7 @@ body {
     }
 
     button {
-      transition: all .5s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
   }
 }
@@ -335,7 +342,7 @@ body {
 .price,
 .per-month {
   font-weight: 400;
-  font-family: "BN Chester";
+  font-family: "BN Chester", "Philosopher";
   color: $main-black;
   transition: color 0.5s ease-in-out;
 }
@@ -465,5 +472,14 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
