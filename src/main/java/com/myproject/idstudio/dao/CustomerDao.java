@@ -39,7 +39,8 @@ public class CustomerDao {
                     resultSet.getInt("id"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"),
-                    resultSet.getString("tel_number")
+                    resultSet.getString("tel_number"),
+                    resultSet.getString("email")
             );
             customers.add(customer);
         }
@@ -56,7 +57,8 @@ public class CustomerDao {
         String firstName = customerResultSet.getString("first_name");
         String lastName = customerResultSet.getString("last_name");
         String telNumber = customerResultSet.getString("tel_number");
-        return new Customer(id, firstName, lastName, telNumber);
+        String email = customerResultSet.getString("email");
+        return new Customer(id, firstName, lastName, telNumber, email);
     }
 
     public Customer getSpecificCustomer(String telNumber) throws SQLException {
@@ -69,15 +71,17 @@ public class CustomerDao {
         int id = customerResultSet.getInt("id");
         String firstName = customerResultSet.getString("first_name");
         String lastName = customerResultSet.getString("last_name");
-        return new Customer(id, firstName, lastName, telNumber);
+        String email = customerResultSet.getString("email");
+        return new Customer(id, firstName, lastName, telNumber, email);
     }
 
     public void forceAddCustomer(Customer customer) throws SQLException {
         PreparedStatement preparedStatement =
-                connection.prepareStatement("INSERT INTO customers (first_name, last_name, tel_number) VALUES (?, ?, ?)");
+                connection.prepareStatement("INSERT INTO customers (first_name, last_name, tel_number, email) VALUES (?, ?, ?, ?)");
         preparedStatement.setString(1, customer.getFirstName());
         preparedStatement.setString(2, customer.getLastName());
         preparedStatement.setString(3, customer.getTelNumber());
+        preparedStatement.setString(4, customer.getEmail());
         preparedStatement.executeUpdate();
     }
 
@@ -86,6 +90,7 @@ public class CustomerDao {
             String firstName = customer.getFirstName();
             String lastName = customer.getLastName();
             String telNumber = customer.getTelNumber();
+            String email = customer.getEmail();
 
             if (firstName != null && !firstName.equals("")) {
                 PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customers SET first_name=? WHERE tel_number=?");
@@ -99,17 +104,24 @@ public class CustomerDao {
                 preparedStatement.setString(2, telNumber);
                 preparedStatement.executeUpdate();
             }
+            if(email != null && !email.equals("")) {
+                PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customers SET email=? WHERE tel_number=?");
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, telNumber);
+                preparedStatement.executeUpdate();
+            }
         }
         else forceAddCustomer(customer);
     }
 
     public void forceUpdateCustomer(Customer customer) throws SQLException {
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("UPDATE customers SET first_name=?, last_name=?, tel_number=?  WHERE id=?");
+                    connection.prepareStatement("UPDATE customers SET first_name=?, last_name=?, tel_number=?, email=?  WHERE id=?");
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
             preparedStatement.setString(3, customer.getTelNumber());
-            preparedStatement.setInt(4, customer.getId());
+            preparedStatement.setString(4, customer.getEmail());
+            preparedStatement.setInt(5, customer.getId());
             preparedStatement.executeUpdate();
     }
 

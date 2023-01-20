@@ -48,7 +48,7 @@ public class CallDao {
 
 	public void addCall(Call call) throws SQLException {
 		CustomerDao customerDao = CustomerDao.getInstance();
-		customerDao.ensureCustomer(new Customer(call.getName(), "", call.getNumber()));
+		customerDao.ensureCustomer(new Customer(call.getName(), "", call.getNumber(), ""));
 
 		PreparedStatement preparedStatement = 
 				connection.prepareStatement("INSERT INTO call_orders (customer_id) VALUES (?)");
