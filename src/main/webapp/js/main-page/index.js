@@ -4,6 +4,7 @@ import { animateNavbarDesktop } from "./animations/navbar-sidenav/navbarDesktop.
 import { toggleSideNav } from "./animations/navbar-sidenav/sideNav.js";
 import { animateHeroImg } from "./animations/hero/heroImg.js";
 import { aboutStudioReveal } from "./animations/about-studio/aboutStudio.js";
+import { dropdownToggle } from "./animations/dropdown/dropdown.js";
 
 import { addScrollListener } from "./helpers/scrollListener.js";
 import { addScrollIntoSection } from "./helpers/navigation.js";
@@ -42,3 +43,4 @@ if (window.screen.width < 992) {
 
 heroHeaderReveal();
 addScrollIntoSection();
+dropdownToggle()

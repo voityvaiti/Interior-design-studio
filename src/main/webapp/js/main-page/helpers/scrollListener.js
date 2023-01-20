@@ -19,7 +19,7 @@ export function addScrollListener(breakpoint) {
   const ourPortfolioSection = document.querySelector(".our-portfolio-section");
   const ourPricingSection = document.querySelector(".our-pricing-section");
   const testimonialsSection = document.querySelector(".testimonials-section");
-  const questionSection = document.querySelector(".question-section");
+
   window.addEventListener("scroll", () => {
     let scrollYPosition = scrollY;
     console.log(scrollYPosition);
@@ -34,7 +34,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
+          ourServicesReveal("xs");
         } else if (
           scrollYPosition >=
             aboutStudioSection.offsetTop +
@@ -43,24 +43,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
-        }
-        if (scrollYPosition >= ourServicesSection.offsetTop) {
-          ourServicesReveal("xs", "services");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "planning");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop +
-            ourServicesSection.offsetHeight / 2 -
-            ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "management");
+          ourServicesReveal("xs");
         }
         if (
           scrollYPosition >=
@@ -97,7 +80,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
+          ourServicesReveal("xs");
         } else if (
           scrollYPosition >=
             aboutStudioSection.offsetTop +
@@ -106,24 +89,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
-        }
-        if (scrollYPosition >= ourServicesSection.offsetTop) {
-          ourServicesReveal("xs", "services");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "planning");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop +
-            ourServicesSection.offsetHeight / 2 -
-            ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "management");
+          ourServicesReveal("xs");
         }
         if (
           scrollYPosition >=
@@ -160,7 +126,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
+          ourServicesReveal("xs");
         } else if (
           scrollYPosition >=
             aboutStudioSection.offsetTop +
@@ -169,24 +135,7 @@ export function addScrollListener(breakpoint) {
             `reveal-text-${breakpoint}`
           )
         ) {
-          ourServicesReveal("xs", "design");
-        }
-        if (scrollYPosition >= ourServicesSection.offsetTop) {
-          ourServicesReveal("xs", "services");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop + ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "planning");
-        }
-        if (
-          scrollYPosition >=
-          ourServicesSection.offsetTop +
-            ourServicesSection.offsetHeight / 2 -
-            ourServicesSection.offsetHeight / 8
-        ) {
-          ourServicesReveal("xs", "management");
+          ourServicesReveal("xs");
         }
         if (
           scrollYPosition >=

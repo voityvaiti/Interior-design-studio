@@ -1,32 +1,27 @@
 import { revealIntoDirection } from "../reveal-function/revealIntoDirection.js";
 
-const ourServicesCardsInvoking = {
-  design: false,
-  services: false,
-  planning: false,
-  management: false,
-};
+let wasInvoked = false;
 
-export function ourServicesReveal(breakpoint, card) {
-  if (!ourServicesCardsInvoking.design && card === "design") {
-    interiorDesignReveal(breakpoint);
-  } else if (!ourServicesCardsInvoking.services && card === "services") {
-    decorativeServicesReveal(breakpoint);
-  } else if (!ourServicesCardsInvoking.planning && card === "planning") {
-    spacePlanningReveal(breakpoint);
-  } else if (!ourServicesCardsInvoking.management && card === "management") {
-    projectManagementReveal(breakpoint);
-  }
-  if (
-    breakpoint === "sm" ||
-    breakpoint === "md" ||
-    breakpoint === "lg" ||
-    breakpoint === "xl"
-  ) {
-    interiorDesignReveal(breakpoint);
-    decorativeServicesReveal(breakpoint);
-    spacePlanningReveal(breakpoint);
-    projectManagementReveal(breakpoint);
+export function ourServicesReveal(breakpoint) {
+  if (!wasInvoked) {
+    if (breakpoint === "xs") {
+      interiorDesignReveal(breakpoint);
+      setTimeout(() => {
+        decorativeServicesReveal(breakpoint);
+      }, 500);
+      setTimeout(() => {
+        spacePlanningReveal(breakpoint);
+      }, 1000);
+      setTimeout(() => {
+        projectManagementReveal(breakpoint);
+      }, 1500);
+    } else {
+      interiorDesignReveal(breakpoint);
+      decorativeServicesReveal(breakpoint);
+      spacePlanningReveal(breakpoint);
+      projectManagementReveal(breakpoint);
+    }
+    wasInvoked = true;
   }
 }
 
@@ -63,7 +58,7 @@ function interiorDesignReveal(breakpoint) {
     breakpoint === "lg"
   ) {
     revealIntoDirection(ourServicesSectionHeader, "top");
-
+    
     setTimeout(() => {
       revealIntoDirection(interiorDesignCardIcon, "top");
     }, 200);
@@ -90,7 +85,6 @@ function interiorDesignReveal(breakpoint) {
       revealIntoDirection(interiorDesignCardDescription, "bottom");
     }, 100);
   }
-  ourServicesCardsInvoking.design = true;
 }
 
 function decorativeServicesReveal(breakpoint) {
@@ -149,7 +143,6 @@ function decorativeServicesReveal(breakpoint) {
       revealIntoDirection(decorativeServicesCardDescription, "top");
     }, 600);
   }
-  ourServicesCardsInvoking.services = true;
 }
 
 function spacePlanningReveal(breakpoint) {
@@ -208,7 +201,6 @@ function spacePlanningReveal(breakpoint) {
       revealIntoDirection(spacePlanningCardDescription, "bottom");
     }, 700);
   }
-  ourServicesCardsInvoking.services = true;
 }
 
 function projectManagementReveal(breakpoint) {
@@ -271,5 +263,4 @@ function projectManagementReveal(breakpoint) {
       revealIntoDirection(consultationButton, "top");
     }, 1300);
   }
-  ourServicesCardsInvoking.services = true;
 }

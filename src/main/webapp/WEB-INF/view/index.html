@@ -25,9 +25,14 @@
     </div>
     <div class="header-right-section">
       <a href="#" class="contact-phone">(303) 555-0105</a>
-      <div class="dropdown">
-        EN
-        <img src="images/navbar/dropdown-arrow.svg" alt="">
+      <div class="dropdown" id="dropdown">
+        <div class="en-language" id="en-language">
+          <p>EN</p>
+          <img id="dropdown-arrow" src="images/navbar/dropdown-arrow.svg" alt="">
+        </div>
+        <div class="ua-language" id="ua-language">
+          <p>UA</p>
+        </div>
       </div>
     </div>
     <div class="hamburger-container menu-off" id="hamburger-container">
@@ -174,7 +179,7 @@
       <div class="tabs d-flex justify-content-between">
         <p class="mb-0" id="filter">ALL</p>
         <p class="mb-0 mx-1" id="filter">COMMERCIAL</p>
-        <p class="mb-0" id="filter">RESIDENTAL</p>
+        <p class="mb-0" id="filter">RESIDENTIAL</p>
         <p class="mb-0 mx-1" id="filter">OFFICE</p>
         <p class="mb-0" id="filter">OTHER</p>
       </div>
@@ -247,10 +252,10 @@
             </div>
             <span></span>
             <ul>
-              <li>Interior Design</li>
-              <li>Project Discussion</li>
-              <li>Space Planning</li>
-              <li>Online Consultation</li>
+              <li id="pricing-service">Interior Design</li>
+              <li id="pricing-service">Project Discussion</li>
+              <li id="pricing-service">Space Planning</li>
+              <li id="pricing-service">Online Consultation</li>
             </ul>
             <button type="button" class="buy-now-button main-btn" id="pricing-card-basic-btn">BUY NOW</button>
           </div>
@@ -267,10 +272,10 @@
             </div>
             <span></span>
             <ul>
-              <li>Color Analysis</li>
-              <li>Space Planning</li>
-              <li>Home Remodeling</li>
-              <li>3D Interior Model</li>
+              <li id="pricing-service">Color Analysis</li>
+              <li id="pricing-service">Space Planning</li>
+              <li id="pricing-service">Home Remodeling</li>
+              <li id="pricing-service">3D Interior Model</li>
             </ul>
             <button type="button" class="buy-now-button main-btn" id="pricing-card-standart-btn">BUY NOW</button>
           </div>
@@ -287,10 +292,10 @@
             </div>
             <span></span>
             <ul>
-              <li>Concept Development</li>
-              <li>Decoration Services</li>
-              <li>Interior Architecture</li>
-              <li>Flooring Installation</li>
+              <li id="pricing-service">Concept Development</li>
+              <li id="pricing-service">Decoration Services</li>
+              <li id="pricing-service">Interior Architecture</li>
+              <li id="pricing-service">Flooring Installation</li>
             </ul>
             <button type="button" class="buy-now-button main-btn" id="pricing-card-premium-btn">BUY NOW</button>
           </div>
@@ -446,7 +451,7 @@
               <div class="testimonials-owner d-flex">
                 <img src="images/what-people-say/kelly-wearstler.jpg" alt="" draggable="false">
                 <div class="owner-info d-flex">
-                  <p class="name">Kelly Wearslter</p>
+                  <p class="name">Kelly Wearstler</p>
                   <p class="position">Interior Designer</p>
                   <span></span>
                   <div class="social d-flex">
@@ -556,7 +561,7 @@
               <div class="testimonials-owner d-flex">
                 <img src="images/what-people-say/me.jpg" alt="">
                 <div class="owner-info d-flex">
-                  <p class="name">Truten Dmytro</p>
+                  <p class="name">Dmytro Truten</p>
                   <p class="position">Frontend Developer</p>
                   <span></span>
                   <div class="social d-flex">
@@ -594,7 +599,7 @@
       <h2 class="section-header" id="question-section-header">Do you have <br><span>any question?</span></h2>
     </div>
     <div class="col-sm-6 col-md-2 px-0">
-      <a href="orderCall.html">
+      <a class="redirect-to-order-page" href="/order-call">
         <button type="button" class="get-started-button main-btn" id="order-a-call-button">ORDER A CALL</button>
       </a>
     </div>
@@ -602,7 +607,8 @@
   <footer class="row mx-0">
     <div class="footer-header col-12 col-lg-3 d-flex px-0">
       <img class="logo" src="images/navbar/logo.svg" alt="" draggable="false">
-      <p>We are one of the leading interior design and remodeling studios available for all of your residential and
+      <p id="footer-description">We are one of the leading interior design and remodeling studios available for all of
+        your residential and
         commercial interior design needs.</p>
       <div class="social d-flex">
         <a href="#">
@@ -615,16 +621,16 @@
           <img src="images/social-media/facebook.svg" alt="" draggable="false">
         </a>
       </div>
-      <p class="license px-0 mb-0">© 2022 id Studio. All Rights Reserved.</p>
+      <p class="license px-0 mb-0" id="license">© 2023 id Studio. All Rights Reserved.</p>
     </div>
     <div class="navigation-container col-sm-6 col-lg-2 px-0">
       <div class="navigation">
-        <p>NAVIGATION</p>
-        <p class="navigation-link" id="about">About</p>
-        <p class="navigation-link" id="services">Services</p>
-        <p class="navigation-link" id="portfolio">Portfolio</p>
-        <p class="navigation-link" id="pricing">Pricing</p>
-        <p class="navigation-link" id="testimonials">Testimonials</p>
+        <p id="navigation">NAVIGATION</p>
+        <p class="navigation-link footer-navigation-link" id="about">About</p>
+        <p class="navigation-link footer-navigation-link" id="services">Services</p>
+        <p class="navigation-link footer-navigation-link" id="portfolio">Portfolio</p>
+        <p class="navigation-link footer-navigation-link" id="pricing">Pricing</p>
+        <p class="navigation-link footer-navigation-link" id="testimonials">Testimonials</p>
       </div>
       <div class="social d-flex">
         <a href="#">
@@ -639,26 +645,26 @@
       </div>
     </div>
     <div class="contacts col-10 col-sm-6 col-lg-3">
-      <p>CONTACTS</p>
+      <p id="contacts">CONTACTS</p>
       <div class="address">
-        <p>ADDRESS</p>
-        <p>3517 W. Gray St. Utica, Pennsylvania 57867</p>
+        <p id="address">ADDRESS</p>
+        <p>3517 W. Gray St. Utica, Pensylvania 57867</p>
       </div>
       <div class="email">
-        <p>EMAIL</p>
+        <p id="email">EMAIL</p>
         <p>michelle.rivera@idstudio.com</p>
       </div>
       <div class="phones">
-        <p>PHONES</p>
+        <p id="phones">PHONES</p>
         <p>(808) 555-0111 or (303) 555-0105</p>
       </div>
     </div>
-    <p class="license px-0 mb-0">© 2022 id Studio. All Rights Reserved.</p>
+    <p class="license px-0 mb-0" id="license">© 2023 id Studio. All Rights Reserved.</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
-  <script type="module" src="js/index.js"></script>
+  <script type="module" src="js/main-page/index.js"></script>
 </body>
 
 </html>

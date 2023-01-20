@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < inputFields.length; i++) {
     inputFields[i].addEventListener("focus", (event) => {
       if (event.currentTarget === inputFields[0]) {
-        nameLabel.style.transform = "translateY(-20px)";
-        nameLabel.style.fontSize = "14px";
+        nameLabel1.style.transform = "translateY(-20px)";
+        nameLabel1.style.fontSize = "14px";
       } else {
-        numberLabel.style.transform = "translateY(-20px)";
-        numberLabel.style.fontSize = "14px";
+        numberLabel1.style.transform = "translateY(-20px)";
+        numberLabel1.style.fontSize = "14px";
         setTimeout(() => {
           flagContainer.style.opacity = "1";
           inputFields[1].classList.add("reveal-placeholder");
@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     inputFields[0].addEventListener("blur", () => {
       if (inputFields[0].value === "") {
-        nameLabel.style.transform = "translateY(0px)";
-        nameLabel.style.fontSize = "16px";
+        nameLabel1.style.transform = "translateY(0px)";
+        nameLabel1.style.fontSize = "16px";
       }
     });
   }

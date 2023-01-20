@@ -1,5 +1,6 @@
 @import url("../fonts/Gilroy/stylesheet.css");
 @import url("../fonts/BN-Chester/stylesheet.css");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 @media (min-width: 0px) {
   .navbar {
     padding: 30px !important;
@@ -30,7 +31,7 @@
   }
   .hero-header h1 {
     font-size: 48px;
-    font-family: "BN Chester";
+    font-family: "BN Chester", "Philosopher";
     font-weight: 400;
     color: #3d3737;
   }
@@ -46,14 +47,20 @@
   .section-header {
     font-weight: 400;
     font-size: 32px;
-    font-family: "BN Chester";
+    font-family: "BN Chester", "Philosopher";
     margin: 0;
   }
   .section-header span {
     font-weight: 400;
     font-size: 32px;
-    font-family: "BN Chester";
+    font-family: "BN Chester", "Philosopher";
     color: #d3a265;
+  }
+  .section-header-ua {
+    font-weight: 700;
+  }
+  .section-header-ua span {
+    font-weight: 700;
   }
   .about-studio-row {
     margin: 60px 30px 30px 30px !important;
@@ -514,6 +521,7 @@
   }
   .header-right-section {
     display: flex;
+    align-items: center;
   }
   .header-right-section a {
     text-decoration: none;
@@ -522,6 +530,26 @@
     margin-left: 40px;
     font-weight: 500;
     opacity: 0;
+    position: relative;
+  }
+  .dropdown img {
+    transition: transform 0.3s ease-in-out;
+  }
+  .dropdown p {
+    margin: 0;
+  }
+  .en-language,
+.ua-language {
+    cursor: pointer;
+    display: flex;
+  }
+  .ua-language {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+  .en-language p {
+    margin-right: 5px;
   }
   .hamburger-container {
     display: none;
@@ -888,6 +916,9 @@ body::-webkit-scrollbar-thumb {
 
 .main-btn {
   transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main-btn:hover {
   transform: scale(1.1);
@@ -959,6 +990,10 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid #d3a265;
 }
 
+.redirect-to-order-page {
+  text-decoration: none !important;
+}
+
 .our-pricing-section {
   background-color: #fff;
 }
@@ -1017,7 +1052,7 @@ body::-webkit-scrollbar-thumb {
 .price,
 .per-month {
   font-weight: 400;
-  font-family: "BN Chester";
+  font-family: "BN Chester", "Philosopher";
   color: #161616;
   transition: color 0.5s ease-in-out;
 }
@@ -1187,5 +1222,21 @@ body::-webkit-scrollbar-thumb {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }/*# sourceMappingURL=main.css.map */
