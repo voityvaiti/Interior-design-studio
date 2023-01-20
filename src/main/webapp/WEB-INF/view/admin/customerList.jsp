@@ -9,6 +9,7 @@
     <title>List of customers</title>
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/admin">Back</a>
 <h1>Customers:</h1>
 <%
   List<Customer> list = (ArrayList<Customer>) request.getSession().getAttribute("customersList");

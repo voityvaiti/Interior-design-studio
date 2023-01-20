@@ -5,6 +5,7 @@
     <title>Customer details</title>
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/admin/customers-list">Back</a>
 <% Customer customer = (Customer)request.getSession().getAttribute("customer"); %>
 <h1>Customer #<%= customer.getId() %> </h1>
 <p>First name: <%=customer.getFirstName()%></p>

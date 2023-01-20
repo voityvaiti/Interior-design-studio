@@ -6,6 +6,7 @@
 </head>
 <body>
 <% Customer customer = (Customer)request.getSession().getAttribute("customerToEdit"); %>
+<a href="<%=request.getContextPath()%>/admin/show-customer?id=<%=customer.getId()%>">Back</a>
 <h1>Customer #<%= customer.getId() %> </h1>
 <form name="orderCall" method="post" action="edit-customer">
   <input type="hidden" name="customerIdToEdit" value="<%= customer.getId() %>"/>

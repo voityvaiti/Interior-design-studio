@@ -7,6 +7,7 @@
     <title>Calls list</title>
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/admin">Back</a>
 <h3>Calls:</h3>
 <%
     List<Call> list = (ArrayList<Call>) request.getSession().getAttribute("callList");
