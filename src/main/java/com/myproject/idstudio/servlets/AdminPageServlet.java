@@ -12,28 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.myproject.idstudio.dao.CallDao;
+import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Call;
 
 @WebServlet("/admin")
-public class AdminServlet extends HttpServlet {
+public class AdminPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            List<Call> list = CallDao.getInstance().getCalls();
-            request.getSession().setAttribute("list", list);
-            request.getRequestDispatcher("/WEB-INF/view/admin.jsp").forward(request, response);
+            request.getSession().setAttribute("customersAmount", CustomerDao.getInstance().countCustomers());
+            request.getSession().setAttribute("callOrdersAmount", CallDao.getInstance().countCalls());
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+        request.getRequestDispatcher("/WEB-INF/view/admin/adminPage.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            CallDao.getInstance().removeCall(Integer.parseInt(request.getParameter("callIdToDelete")));
-        } catch (NumberFormatException | SQLException e) {
-            e.printStackTrace();
-        }
-        doGet(request, response);
     }
 }

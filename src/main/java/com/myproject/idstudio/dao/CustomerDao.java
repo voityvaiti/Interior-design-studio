@@ -120,6 +120,14 @@ public class CustomerDao {
         return customerCheckStatement.executeQuery().next();
     }
 
+    public int countCustomers() throws SQLException {
+        ResultSet resultSet =
+                connection.createStatement().executeQuery("SELECT COUNT(*) AS amount FROM customers");
+        resultSet.next();
+        return resultSet.getInt("amount");
+    }
+
+
 //    Alternative version of method ensureCustomer()
 //        public void ensureCustomer(Customer customer) throws SQLException {
 //        if (customerExists(customer.getTelNumber())) {

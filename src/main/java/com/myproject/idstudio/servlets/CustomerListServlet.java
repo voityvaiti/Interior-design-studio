@@ -19,7 +19,7 @@ public class CustomerListServlet extends HttpServlet {
         try {
             List<Customer> customersList = CustomerDao.getInstance().getCustomers();
             request.getSession().setAttribute("customersList", customersList);
-            request.getRequestDispatcher("/WEB-INF/view/customersList.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/admin/customerList.jsp").forward(request, response);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
