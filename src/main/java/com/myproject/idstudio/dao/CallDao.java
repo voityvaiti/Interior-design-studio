@@ -37,9 +37,11 @@ public class CallDao {
 		while(resultSet.next()) {
 			Call call = new Call(
 					resultSet.getInt("id"),
+					new Customer(
 					resultSet.getInt("customer_id"),
-					resultSet.getString("name"),
-					resultSet.getString("tel_number")
+					resultSet.getString("name"), "",
+					resultSet.getString("tel_number"), ""
+					)
 					);
 			calls.add(call);	
 		}
@@ -48,11 +50,11 @@ public class CallDao {
 
 	public void addCall(Call call) throws SQLException {
 		CustomerDao customerDao = CustomerDao.getInstance();
-		customerDao.ensureCustomer(new Customer(call.getName(), "", call.getNumber(), ""));
+		customerDao.ensureCustomer(call.getCustomer());
 
 		PreparedStatement preparedStatement = 
 				connection.prepareStatement("INSERT INTO call_orders (customer_id) VALUES (?)");
-		preparedStatement.setInt(1, customerDao.getSpecificCustomer(call.getNumber()).getId());
+		preparedStatement.setInt(1, customerDao.getSpecificCustomer(call.getCustomer().getTelNumber()).getId());
 		preparedStatement.executeUpdate();
 	}
 
