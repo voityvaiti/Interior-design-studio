@@ -22,5 +22,6 @@ Web App, realising functions of business card site:
 ###### Technology stack:
 - HTML
 - CSS/SCSS
-- Bootstrap
 - JavaScript
+- Bootstrap
+- JQuery

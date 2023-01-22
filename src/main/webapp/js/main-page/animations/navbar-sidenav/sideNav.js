@@ -1,6 +1,11 @@
+import { changeLanguage } from "../../helpers/changeLanguage.js";
+
 const hamburgerContainer = document.querySelector(".hamburger-container");
 const sideNavBackPanel = document.querySelector(".sidenav-back-panel");
 const sideNav = document.querySelector(".sidenav");
+const navigationLinks = document.querySelectorAll('.navigation-link')
+const selectENLanguage = document.getElementById("sidenav-en-language");
+const selectUALanguage = document.getElementById("sidenav-ua-language");
 
 export function toggleSideNav() {
   hamburgerContainer.addEventListener("click", () => {
@@ -12,9 +17,15 @@ export function toggleSideNav() {
     sideNavBackPanel.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
   });
   sideNavBackPanel.addEventListener("click", closeSideNav);
-  Array.from(sideNav.children[0].children).forEach((link) => {
-    link.addEventListener("click", closeSideNav);
-  });
+  for (let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].addEventListener('click', closeSideNav)
+  }
+  selectENLanguage.addEventListener('click', function () {
+    changeLanguage('en')
+  })
+  selectUALanguage.addEventListener('click', function () {
+    changeLanguage('ua')
+  })
 }
 
 function closeSideNav() {

@@ -25,7 +25,7 @@
     </div>
     <div class="header-right-section">
       <a href="#" class="contact-phone">(303) 555-0105</a>
-      <div class="dropdown" id="dropdown">
+      <div class="dropdown">
         <div class="en-language" id="en-language">
           <p>EN</p>
           <img id="dropdown-arrow" src="images/navbar/dropdown-arrow.svg" alt="">
@@ -45,11 +45,19 @@
   <section class="sidenav-container">
     <div class="sidenav">
       <div class="navigation">
-        <p class="navigation-link" id="about">About</p>
-        <p class="navigation-link" id="services">Services</p>
-        <p class="navigation-link" id="portfolio">Portfolio</p>
-        <p class="navigation-link" id="pricing">Pricing</p>
-        <p class="navigation-link" id="testimonials">Testimonials</p>
+        <div class="navigation-dropdown">
+          <div class="en-language" id="sidenav-en-language">
+            <p class="mb-0">EN</p>
+          </div>
+          <div class="ua-language ms-5" id="sidenav-ua-language">
+            <p class="mb-0">UA</p>
+          </div>
+        </div>
+        <p class="navigation-link sidenav-navigation-link" id="about">About</p>
+        <p class="navigation-link sidenav-navigation-link" id="services">Services</p>
+        <p class="navigation-link sidenav-navigation-link" id="portfolio">Portfolio</p>
+        <p class="navigation-link sidenav-navigation-link" id="pricing">Pricing</p>
+        <p class="navigation-link sidenav-navigation-link" id="testimonials">Testimonials</p>
       </div>
     </div>
     <div class="sidenav-back-panel"></div>
@@ -81,7 +89,7 @@
           experienced designers leverage their knowledge and expertise to create unique and comfortable interiors for
           you.
         </p>
-        <p class="about-studio-more-text-lg" id="about-studio-more-text-lg"">
+        <p class="about-studio-more-text-lg" id="about-studio-more-text-lg">
           <br>
           Our team knows that interior design can be stressful for the client and we do our best to make it as easy as
           possible. We listen to your needs, ideas, and inputs. And most importantly, we make it exciting and
@@ -89,15 +97,15 @@
           for our clients.
         </p>
         <div class=" about-studio-more-container">
-        <p class="about-studio-more-text-xs">
-          Our team knows that interior design can be stressful for the client and we do our best to make it as easy as
-          possible. We listen to your needs, ideas, and inputs. And most importantly, we make it exciting and
-          enjoyable
-          for our clients.
-        </p>
+          <p class="about-studio-more-text-xs" id="about-studio-more-text-xs">
+            Our team knows that interior design can be stressful for the client and we do our best to make it as easy as
+            possible. We listen to your needs, ideas, and inputs. And most importantly, we make it exciting and
+            enjoyable
+            for our clients.
+          </p>
+        </div>
+        <p class="more about-studio-more" id="about-studio-more">READ MORE</p>
       </div>
-      <p class="more about-studio-more" id="about-studio-more">READ MORE</p>
-    </div>
     </div>
   </section>
 
@@ -599,7 +607,7 @@
       <h2 class="section-header" id="question-section-header">Do you have <br><span>any question?</span></h2>
     </div>
     <div class="col-sm-6 col-md-2 px-0">
-      <a class="redirect-to-order-page" href="/order-call">
+      <a class="redirect-to-order-page" href="orderCall.html">
         <button type="button" class="get-started-button main-btn" id="order-a-call-button">ORDER A CALL</button>
       </a>
     </div>

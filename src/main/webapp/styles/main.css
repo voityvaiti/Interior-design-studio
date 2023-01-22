@@ -883,24 +883,25 @@ body::-webkit-scrollbar-thumb {
   overflow-x: hidden;
   transition: 0.6s;
   z-index: 10;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .sidenav .navigation {
   text-align: end;
   display: block;
 }
 .sidenav .navigation p {
+  white-space: nowrap;
   font-weight: 600;
   font-size: 30px;
   -webkit-text-decoration: solid underline 2px #d3a265;
-  -ms-text-decoration: solid underline 2px #d3a265;
-  -o-text-decoration: solid underline 2px #d3a265;
-  text-decoration: solid underline 2px #d3a265;
-  -webkit-text-underline-offset: 8px;
-  -moz-text-underline-offset: 8px;
-  -ms-text-underline-offset: 8px;
-  -o-text-underline-offset: 8px;
+          text-decoration: solid underline 2px #d3a265;
   text-underline-offset: 8px;
+}
+
+.navigation-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 100px;
 }
 
 .hero-header {
