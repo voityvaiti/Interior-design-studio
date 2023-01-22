@@ -7,6 +7,7 @@
     <title>Calls list</title>
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/admin">Back</a>
 <h3>Calls:</h3>
 <%
     List<Call> list = (ArrayList<Call>) request.getSession().getAttribute("callList");
@@ -16,7 +17,7 @@
 }
 else {
     for(int i = 0; i< list.size(); i++) {%>
-<%= list.get(i) %> <a href="<%=request.getContextPath()%>/admin/show-customer?id=<%= list.get(i).getCustomerId() %>">Show</a>
+<%= list.get(i) %> <a href="<%=request.getContextPath()%>/admin/show-customer?id=<%= list.get(i).getCustomer().getId() %>">Show</a>
 <form name="deleteCallOrder" method="post" action="call-order-list">
     <input type="hidden" name="callIdToDelete" value="<%= list.get(i).getId() %>"/>
     <input type="submit" value="Done" />

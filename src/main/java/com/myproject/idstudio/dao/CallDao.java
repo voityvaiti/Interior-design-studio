@@ -28,18 +28,20 @@ public class CallDao {
 	private final Connection connection = DatabaseConnector.getInstance().getConnection();
 
 	public List<Call> getCalls() throws SQLException {
-		ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM call_orders");
+		ResultSet resultSet = connection.createStatement().executeQuery("SELECT call_orders.id AS id, " +
+				"customers.id AS customer_id, customers.first_name " +
+				"AS name, customers.tel_number AS tel_number " +
+				"FROM call_orders JOIN customers ON call_orders.customer_id=customers.id");
 		List<Call> calls = new ArrayList<>();
-		CustomerDao customerDao = CustomerDao.getInstance();
 		
 		while(resultSet.next()) {
-			Customer customer = customerDao.
-					getSpecificCustomer(resultSet.getInt("customer_id"));
 			Call call = new Call(
 					resultSet.getInt("id"),
-					customer.getId(),
-					customer.getFirstName(),
-					customer.getTelNumber()
+					new Customer(
+					resultSet.getInt("customer_id"),
+					resultSet.getString("name"), "",
+					resultSet.getString("tel_number"), ""
+					)
 					);
 			calls.add(call);	
 		}
@@ -48,11 +50,11 @@ public class CallDao {
 
 	public void addCall(Call call) throws SQLException {
 		CustomerDao customerDao = CustomerDao.getInstance();
-		customerDao.ensureCustomer(new Customer(call.getName(), "", call.getNumber()));
+		customerDao.ensureCustomer(call.getCustomer());
 
 		PreparedStatement preparedStatement = 
 				connection.prepareStatement("INSERT INTO call_orders (customer_id) VALUES (?)");
-		preparedStatement.setInt(1, customerDao.getSpecificCustomer(call.getNumber()).getId());
+		preparedStatement.setInt(1, customerDao.getSpecificCustomer(call.getCustomer().getTelNumber()).getId());
 		preparedStatement.executeUpdate();
 	}
 

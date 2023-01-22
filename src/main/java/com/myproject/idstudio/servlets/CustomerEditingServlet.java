@@ -29,6 +29,7 @@ public class CustomerEditingServlet extends HttpServlet {
         int customerId = Integer.parseInt(request.getParameter("customerIdToEdit"));
         String firstName = request.getParameter("firstName").trim();
         String lastName = request.getParameter("lastName").trim();
+        String email = request.getParameter("email").trim();
         String telNumberBeforeEdit = request.getParameter("telNumberBeforeEdit").trim();
         String telNumberAfterEdit = request.getParameter("telNumberAfterEdit").trim();
 
@@ -45,10 +46,10 @@ public class CustomerEditingServlet extends HttpServlet {
                 doGet(request, response);
                 request.getSession().removeAttribute("editCustomerErrorMessage");
             } else if (customerAlreadyExist) {
-                customerDao.ensureCustomer(new Customer(firstName, lastName, telNumberBeforeEdit));
+                customerDao.ensureCustomer(new Customer(firstName, lastName, telNumberBeforeEdit,email));
                 response.sendRedirect(request.getContextPath() + "/admin/show-customer?id=" + customerId);
             } else if (customerWasChanged) {
-                customerDao.forceUpdateCustomer(new Customer(customerId, firstName, lastName, telNumberAfterEdit));
+                customerDao.forceUpdateCustomer(new Customer(customerId, firstName, lastName, telNumberAfterEdit, email));
                 response.sendRedirect(request.getContextPath() + "/admin/show-customer?id=" + customerId);
             } else {
                 editCustomerErrorMessage = "Error! Update page and try again";

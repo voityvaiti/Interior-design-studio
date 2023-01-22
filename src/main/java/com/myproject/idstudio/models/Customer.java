@@ -2,6 +2,7 @@ package com.myproject.idstudio.models;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -19,20 +20,26 @@ public class Customer {
 	@Size(max = 16, message = "Too long telephone number")
 	@Pattern(regexp = "^\\+[0-9]{7,}|^$|.{17,}", message = "Invalid telephone number")
 	private String telNumber;
+	@NotBlank(message = "Field of e-mail is empty")
+	@Size(max = 255, message = "Too long e-mail")
+	@Email
+	private String email;
 	
-	public Customer(String firstName, String lastName, String telNumber) {
+	public Customer(String firstName, String lastName, String telNumber, String email) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.telNumber = telNumber;
+		this.email = email;
 	}
 
-	public Customer(int id, String firstName, String lastName, String telNumber) {
+	public Customer(int id, String firstName, String lastName, String telNumber, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.telNumber = telNumber;
+		this.email = email;
 	}
 	
 	public int getId() {
@@ -58,6 +65,12 @@ public class Customer {
 	}
 	public void setTelNumber(String telNumber) {
 		this.telNumber = telNumber;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override

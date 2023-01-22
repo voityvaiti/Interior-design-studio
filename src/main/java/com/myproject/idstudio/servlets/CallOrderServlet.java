@@ -3,6 +3,7 @@ package com.myproject.idstudio.servlets;
 import java.io.IOException;
 
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
+import javax.validation.Validator;
 import javax.validation.ValidatorFactory;;
 import com.myproject.idstudio.dao.CallDao;
 import com.myproject.idstudio.dao.CustomerDao;
@@ -27,15 +29,18 @@ public class CallOrderServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String name = request.getParameter("name").trim();
-        String number = request.getParameter("number").trim();
+        Customer customer = new Customer(request.getParameter("name").trim(), "",
+                request.getParameter("number").trim(), "");
 
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
-        Set<ConstraintViolation<Call>> errors = validatorFactory.getValidator().
-                validate(new Call(name, number));
+        Validator validator = validatorFactory.getValidator();
+
+        Set<ConstraintViolation<Customer>> errors = new HashSet<>();
+        errors.addAll(validator.validateProperty(customer, "firstName"));
+        errors.addAll(validator.validateProperty(customer, "telNumber"));
         if(errors.isEmpty()) {
             try {
-                CallDao.getInstance().addCall(new Call(name, number));
+                CallDao.getInstance().addCall(new Call(customer));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
