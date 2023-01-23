@@ -39,11 +39,11 @@
     </div>
   </form>
 
-  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/6.4.1/js/intlTelInput.min.js"></script>
-  <script type="module" src="js/animations/order-call/orderCall.js" defer></script>
-  <script src="js/order-call-page/helpers/saveUserInfo.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/6.4.1/js/intlTelInput.min.js"></script>
+	<script src="js/order-call-page/animations/order-call/orderCall.js" defer></script>
+	<script src="js/order-call-page/helpers/saveUserInfo.js"></script>
   </body>
 
   </html>
