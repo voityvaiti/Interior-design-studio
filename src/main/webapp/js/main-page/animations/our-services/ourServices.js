@@ -26,241 +26,125 @@ export function ourServicesReveal(breakpoint) {
 }
 
 function interiorDesignReveal(breakpoint) {
-  const ourServicesSectionHeader = document.getElementById(
-    "our-services-section-header"
-  );
-  const interiorDesignCardIcon = document.getElementById(
-    "interior-design-card-icon"
-  );
-  const interiorDesignCardHeader = document.getElementById(
-    "interior-design-card-header"
-  );
-  const interiorDesignCardDescription = document.getElementById(
-    "interior-design-card-description"
-  );
+  let interiorDesignCardArray = [
+    document.getElementById("our-services-section-header"),
+    document.getElementById("interior-design-card-icon"),
+    document.getElementById("interior-design-card-header"),
+    document.getElementById("interior-design-card-description"),
+  ];
+
   if (breakpoint === "xs") {
-    revealIntoDirection(ourServicesSectionHeader, "right");
+    revealIntoDirection(interiorDesignCardArray[0], "right");
 
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardIcon, "right");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardHeader, "right");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardDescription, "right");
-    }, 600);
-  } else if (
-    breakpoint === "sm" ||
-    breakpoint === "md" ||
-    breakpoint === "lg"
-  ) {
-    revealIntoDirection(ourServicesSectionHeader, "top");
-    
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardIcon, "top");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardHeader, "top");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardDescription, "top");
-    }, 600);
+    for (let i = 1; i < interiorDesignCardArray.length; i++) {
+      servicesReveal(breakpoint, interiorDesignCardArray[i], "right");
+    }
   } else {
-    revealIntoDirection(ourServicesSectionHeader, "top");
+    revealIntoDirection(interiorDesignCardArray[0], "top");
 
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardIcon, "bottom");
-    }, 300);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardHeader, "bottom");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(interiorDesignCardDescription, "bottom");
-    }, 100);
+    for (let i = 1; i < interiorDesignCardArray.length; i++) {
+      servicesReveal(breakpoint, interiorDesignCardArray[i], "top");
+    }
   }
 }
 
 function decorativeServicesReveal(breakpoint) {
-  const servicesSplittingLine = document.getElementById(
-    "services-splitting-line"
-  );
-  const decorativeServicesCardIcon = document.getElementById(
-    "decorative-services-card-icon"
-  );
-  const decorativeServicesCardHeader = document.getElementById(
-    "decorative-services-card-header"
-  );
-  const decorativeServicesCardDescription = document.getElementById(
-    "decorative-services-card-description"
-  );
+  let decorativeServicesCardArray = [
+    document.getElementById("services-splitting-line"),
+    document.getElementById("decorative-services-card-icon"),
+    document.getElementById("decorative-services-card-header"),
+    document.getElementById("decorative-services-card-description"),
+  ];
   if (breakpoint === "xs") {
-    revealIntoDirection(servicesSplittingLine, "right");
+    revealIntoDirection(decorativeServicesCardArray[0], "right");
 
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardIcon, "right");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardHeader, "right");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardDescription, "right");
-    }, 600);
-  } else if (
-    breakpoint === "sm" ||
-    breakpoint === "md" ||
-    breakpoint === "lg"
-  ) {
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardIcon, "top");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardHeader, "top");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardDescription, "top");
-    }, 600);
+    for (let i = 1; i < decorativeServicesCardArray.length; i++) {
+      servicesReveal(breakpoint, decorativeServicesCardArray[i], "right");
+    }
   } else {
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardIcon, "top");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardHeader, "top");
-    }, 500);
-
-    setTimeout(() => {
-      revealIntoDirection(decorativeServicesCardDescription, "top");
-    }, 600);
+    for (let i = 1; i < decorativeServicesCardArray.length; i++) {
+      servicesReveal(breakpoint, decorativeServicesCardArray[i], "top");
+    }
   }
 }
 
+let spacePlanningCardArray = [
+  document.getElementById("planning-splitting-line"),
+  document.getElementById("space-planning-card-icon"),
+  document.getElementById("space-planning-card-header"),
+  document.getElementById("space-planning-card-description"),
+];
 function spacePlanningReveal(breakpoint) {
-  const planningSplittingLine = document.getElementById(
-    "planning-splitting-line"
-  );
-  const spacePlanningCardIcon = document.getElementById(
-    "space-planning-card-icon"
-  );
-  const spacePlanningCardHeader = document.getElementById(
-    "space-planning-card-header"
-  );
-  const spacePlanningCardDescription = document.getElementById(
-    "space-planning-card-description"
-  );
   if (breakpoint === "xs") {
-    revealIntoDirection(planningSplittingLine, "right");
+    revealIntoDirection(spacePlanningCardArray[0], "right");
 
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardIcon, "right");
-    }, 200);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardHeader, "right");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardDescription, "right");
-    }, 600);
-  } else if (
-    breakpoint === "sm" ||
-    breakpoint === "md" ||
-    breakpoint === "lg"
-  ) {
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardIcon, "top");
-    }, 800);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardHeader, "top");
-    }, 1000);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardDescription, "top");
-    }, 1200);
+    for (let i = 1; i < spacePlanningCardArray.length; i++) {
+      servicesReveal(breakpoint, spacePlanningCardArray[i], "right");
+    }
   } else {
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardIcon, "bottom");
-    }, 900);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardHeader, "bottom");
-    }, 800);
-
-    setTimeout(() => {
-      revealIntoDirection(spacePlanningCardDescription, "bottom");
-    }, 700);
+    for (let i = 1; i < spacePlanningCardArray.length; i++) {
+      servicesReveal(breakpoint, spacePlanningCardArray[i], "top", "second");
+    }
   }
 }
 
 function projectManagementReveal(breakpoint) {
-  const managementSplittingLine = document.getElementById(
-    "management-splitting-line"
-  );
-  const projectManagementCardIcon = document.getElementById(
-    "project-management-card-icon"
-  );
-  const projectManagementCardHeader = document.getElementById(
-    "project-management-card-header"
-  );
-  const projectManagementCardDescription = document.getElementById(
-    "project-management-card-description"
-  );
-  const consultationButton = document.getElementById("consultation-button");
+  let projectManagementCardArray = [
+    document.getElementById("management-splitting-line"),
+    document.getElementById("project-management-card-icon"),
+    document.getElementById("project-management-card-header"),
+    document.getElementById("project-management-card-description"),
+  ];
   if (breakpoint === "xs") {
-    revealIntoDirection(managementSplittingLine, "right");
+    revealIntoDirection(projectManagementCardArray[0], "right");
 
-    setTimeout(() => {
-      revealIntoDirection(projectManagementCardIcon, "right");
-    }, 200);
+    for (let i = 1; i < projectManagementCardArray.length; i++) {
+      servicesReveal(breakpoint, projectManagementCardArray[i], "right");
+    }
+  } else {
+    for (let i = 1; i < projectManagementCardArray.length; i++) {
+      servicesReveal(
+        breakpoint,
+        projectManagementCardArray[i],
+        "top",
+        "second"
+      );
+    }
+  }
+}
 
+function servicesReveal(breakpoint, element, direction, row) {
+  if (breakpoint === "sm" || (breakpoint === "md" && row === "second")) {
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardHeader, "right");
-    }, 400);
-
-    setTimeout(() => {
-      revealIntoDirection(projectManagementCardDescription, "right");
+      revealIntoDirection(element, direction);
     }, 600);
-  } else if (
-    breakpoint === "sm" ||
-    breakpoint === "md" ||
-    breakpoint === "lg"
-  ) {
+
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardIcon, "top");
+      revealIntoDirection(element, direction);
     }, 800);
 
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardHeader, "top");
+      revealIntoDirection(element, direction);
     }, 1000);
-
-    setTimeout(() => {
-      revealIntoDirection(projectManagementCardDescription, "top");
-    }, 1200);
   } else {
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardIcon, "top");
-    }, 1000);
+      revealIntoDirection(element, direction);
+    }, 200);
 
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardHeader, "top");
-    }, 1100);
+      revealIntoDirection(element, direction);
+    }, 400);
 
     setTimeout(() => {
-      revealIntoDirection(projectManagementCardDescription, "top");
-    }, 1200);
+      revealIntoDirection(element, direction);
+    }, 600);
+  }
+  if (breakpoint === "xl") {
     setTimeout(() => {
-      revealIntoDirection(consultationButton, "top");
-    }, 1300);
+      revealIntoDirection(
+        document.getElementById("consultation-button"),
+        "top"
+      );
+    }, 600);
   }
 }

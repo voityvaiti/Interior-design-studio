@@ -83,7 +83,7 @@ const language = {
     "VIEW MORE",
     "VIEW MORE",
     "Basic",
-    "Standart",
+    "Standard",
     "Premium",
     "per month",
     "per month",
