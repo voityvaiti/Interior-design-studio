@@ -54,11 +54,12 @@ public class SubscriptionDao {
         subscription.setCustomer(
                 customerDao.getSpecificCustomer(subscription.getCustomer().getTelNumber())
         );
-
-        if (subscriptionExists(subscription.getCustomer().getId())) {
+        int customerId = subscription.getCustomer().getId();
+        if (subscriptionExists(customerId)) {
             Subscription existingSubscription = getSubscription(subscription.getCustomer().getId());
             subscription.setId(existingSubscription.getId());
-            if (subscription.getSubscriptionType() == existingSubscription.getSubscriptionType()) {
+            if(subscriptionIsActive(customerId) && subscription.getSubscriptionType()
+                    == existingSubscription.getSubscriptionType()) {
                 subscription.setEndDate(
                         new java.util.Date(
                                 existingSubscription.getEndDate().getTime()
@@ -67,9 +68,9 @@ public class SubscriptionDao {
                 );
             }
             updateSubscription(subscription);
-        } else
-            addSubscription(subscription);
+        } else addSubscription(subscription);
     }
+
 
     private void addSubscription(Subscription subscription) throws SQLException {
         PreparedStatement preparedStatement =
@@ -96,5 +97,15 @@ public class SubscriptionDao {
                 connection.prepareStatement("SELECT * FROM subscriptions WHERE customer_id=?");
         getSubscriptionStatement.setInt(1, customerId);
         return getSubscriptionStatement.executeQuery().next();
+    }
+
+    public boolean subscriptionIsActive(int customerId) throws SQLException {
+        PreparedStatement getSubscriptionStatement =
+                connection.prepareStatement("SELECT * FROM subscriptions WHERE customer_id=?");
+        getSubscriptionStatement.setInt(1, customerId);
+        ResultSet resultSet = getSubscriptionStatement.executeQuery();
+        if (resultSet.next() && resultSet.getDate("end_date").getTime() > System.currentTimeMillis())
+            return true;
+        else return false;
     }
 }
