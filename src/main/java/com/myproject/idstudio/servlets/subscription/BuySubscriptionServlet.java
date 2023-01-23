@@ -22,10 +22,12 @@ import java.util.Set;
 public class BuySubscriptionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getSession().getAttribute("subscription-preset")==null) {
-            String subscriptionPreset = request.getParameter("subscription-preset");
-            if (subscriptionPreset == null || subscriptionPreset.equals("")) subscriptionPreset = "standard";
-            request.getSession().setAttribute("subscription-preset", subscriptionPreset);
+        String paramSubscriptionPreset = request.getParameter("subscription-preset");
+        if(paramSubscriptionPreset!=null && SubscriptionType.contains(paramSubscriptionPreset.toUpperCase())) {
+            request.getSession().setAttribute("subscription-preset", paramSubscriptionPreset);
+        } else {
+            if(request.getSession().getAttribute("subscription-preset")==null)
+                request.getSession().setAttribute("subscription-preset", "standard");
         }
         request.getRequestDispatcher("/WEB-INF/view/buySubscription.jsp").forward(request, response);
     }
