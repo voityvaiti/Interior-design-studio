@@ -1,4 +1,4 @@
-package com.myproject.idstudio.servlets;
+package com.myproject.idstudio.servlets.call;
 
 import com.myproject.idstudio.dao.CallDao;
 import com.myproject.idstudio.models.Call;

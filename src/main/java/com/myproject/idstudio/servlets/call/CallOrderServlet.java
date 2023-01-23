@@ -1,4 +1,4 @@
-package com.myproject.idstudio.servlets;
+package com.myproject.idstudio.servlets.call;
 
 import java.io.IOException;
 
@@ -17,7 +17,6 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;;
 import com.myproject.idstudio.dao.CallDao;
-import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Call;
 import com.myproject.idstudio.models.Customer;
 
