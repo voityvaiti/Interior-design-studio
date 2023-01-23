@@ -1,9 +1,8 @@
-package com.myproject.idstudio.servlets;
+package com.myproject.idstudio.servlets.customer;
 
 import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.dao.SubscriptionDao;
 import com.myproject.idstudio.models.Customer;
-import com.myproject.idstudio.models.Subscription;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

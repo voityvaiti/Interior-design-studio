@@ -4,6 +4,7 @@
     <title>Subscribing</title>
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/">Back</a>
 <h1>Please, fill in the fields</h1>
 <form name="buy_subscription" method="post" action="subscribing">
     First name: <input type="text" name="first_name" maxlength="20"/><br/>

@@ -1,4 +1,4 @@
-package com.myproject.idstudio.servlets;
+package com.myproject.idstudio.servlets.customer;
 
 import com.myproject.idstudio.dao.CustomerDao;
 import com.myproject.idstudio.models.Customer;

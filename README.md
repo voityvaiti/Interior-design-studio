@@ -1,10 +1,11 @@
-# Interior-Design-Studio 
+# Interior Design Studio 
 Web App, realising functions of business card site:
 
 ### Backend 
-- Ability to order call
 - Admin panel with form-based authentication
+- Ability to order call
 - Customer accounting 
+- Subscription to services for a selected period and conditions
 - Displaying and editing information about customers in admin panel
 - Validation of input fields with errors displaying
 

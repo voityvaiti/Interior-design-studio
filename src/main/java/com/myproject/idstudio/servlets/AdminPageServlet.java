@@ -3,7 +3,6 @@ package com.myproject.idstudio.servlets;
 import java.io.IOException;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myproject.idstudio.dao.CallDao;
 import com.myproject.idstudio.dao.CustomerDao;
-import com.myproject.idstudio.models.Call;
 
 @WebServlet("/admin")
 public class AdminPageServlet extends HttpServlet {

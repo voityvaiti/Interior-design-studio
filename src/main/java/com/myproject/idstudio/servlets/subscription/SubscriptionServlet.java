@@ -1,4 +1,4 @@
-package com.myproject.idstudio.servlets;
+package com.myproject.idstudio.servlets.subscription;
 
 import com.myproject.idstudio.dao.SubscriptionDao;
 import com.myproject.idstudio.models.Subscription;
