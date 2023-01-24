@@ -1,30 +1,71 @@
+@import "../../fonts/BN-Chester/stylesheet.css";
+@import "../../fonts/Gilroy/stylesheet.css";
 * {
   margin: 0;
   padding: 0;
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 14px;
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   display: flex;
+  background-color: #d3a265;
 }
 
-p {
+h1 {
+  font-family: "BN Chester";
+  text-align: center;
+  font-weight: 600;
   margin-bottom: 0;
+}
+h1 span {
+  font-family: "BN Chester";
+  color: #d3a265;
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+p, label {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+label {
+  margin-left: 5px;
+}
+
+input {
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #d3a265;
+  border-radius: 10px;
+}
+input:focus {
+  outline: none;
+}
+
+.header-container {
+  margin-bottom: 10px;
 }
 
 .form-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.form-container * {
-  margin: 5px;
+.form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px 10px;
 }
 
 .user-info-container {
@@ -32,11 +73,15 @@ p {
   flex-direction: column;
 }
 
-.first-name-container,
-.last-name-container,
-.phone-number-container,
-.email-container,
-.subscribing-type-container {
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.subscribing-type-container,
+.subscribing-type {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,4 +96,16 @@ p {
 .subscribe-button-container {
   display: flex;
   justify-content: center;
+}
+.subscribe-button-container input {
+  height: 40px;
+  width: 50%;
+  background-color: #fff;
+  border: 2px solid #d3a265;
+  border-radius: 10px;
+}
+
+.subscribing-type-container,
+.term-container {
+  margin: 10px 0px;
 }/*# sourceMappingURL=subscription.css.map */
