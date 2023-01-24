@@ -1,0 +1,141 @@
+@import "../../fonts/BN-Chester/stylesheet.css";
+@import "../../fonts/Gilroy/stylesheet.css";
+@import "../helpers/variables";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 14px;
+  // border: 1px solid red;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  background-color: $main-orange;
+}
+
+h1 {
+  font-family: "BN Chester";
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+  span {
+    font-family: "BN Chester";
+    color: $main-orange;
+    font-size: calc(1.375rem + 1.5vw);
+  }
+}
+
+p, label {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid $main-orange !important;
+  &:focus{
+    outline: none;
+  }
+}
+
+.return-link {
+  position: absolute;
+  top: -10%;
+  left: 0;
+}
+
+.return-button {
+  text-align: center;
+  background-color: transparent;
+  color: $main-white;
+  border: none;
+}
+
+.header-container {
+  margin-bottom: 10px;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  background-color: $main-white;
+  border-radius: 20px;
+  padding: 30px 10px;
+  box-shadow: 8px 8px 16px #ab8352, -8px -8px 16px #fbc178;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input {
+    height: 30px;
+  }
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+  label {
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  }
+}
+
+.subscribing-type-container,
+.subscribing-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.subscribing-type {
+  label {
+    margin-left: 5px;
+  }
+}
+
+.term-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.term-input-container {
+  input {
+    text-align: center;
+  }
+}
+.subscribe-button-container {
+  display: flex;
+  justify-content: center;
+  input {
+    height: 40px;
+    width: 50%;
+    background-color: $main-white;
+    border: $button-border;
+    border-radius: 10px;
+  }
+}
+
+.subscribing-type-container,
+.term-container {
+  margin: 10px 0px;
+}
