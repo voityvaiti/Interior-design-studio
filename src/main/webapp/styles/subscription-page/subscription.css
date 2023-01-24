@@ -33,13 +33,11 @@ h1 span {
 p, label {
   margin-bottom: 0;
   text-align: center;
-  font-size: 14px;
 }
 
 input {
   border: none;
   border-bottom: 2px solid #d3a265 !important;
-  font-size: 14px;
 }
 input:focus {
   outline: none;
@@ -82,13 +80,14 @@ input:focus {
 .user-info label {
   position: absolute;
   left: 0;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
 .subscribing-type-container,
 .subscribing-type {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .subscribing-type label {

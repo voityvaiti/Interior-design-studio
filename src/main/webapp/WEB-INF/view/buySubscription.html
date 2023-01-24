@@ -12,27 +12,27 @@
 
 <body>
   <div class="form-container row px-0 mx-0">
-    <form class="form col-10 col-sm-8" name="buy_subscription" method="post" action="subscribing">
+    <form class="form col-10 col-sm-8 col-md-6 col-lg-4" name="buy_subscription" method="post" action="subscribing">
       <div class="header-container">
         <h1>Buy <span>Subscription</span></h1>
         <p>Please, fill in the fields</p>
       </div>
       <div class="user-info-container">
         <div class="user-info">
-          <input type="text" name="first_name" maxlength="20" id="first-name" />
-          <label for="first-name">First name</label>
+          <input class="input-field" type="text" name="first_name" maxlength="20" id="first-name" />
+          <label class="first-name-label" for="first-name">First name</label>
         </div>
         <div class="user-info">
-          <input type="text" name="last_name" maxlength="20" id="last-name" />
-          <label for="last-name">Last name</label>
+          <input class="input-field" type="text" name="last_name" maxlength="20" id="last-name" />
+          <label class="last-name-label" for="last-name">Last name</label>
         </div>
         <div class="user-info">
-          <input type="tel" name="tel_number" maxlength="16" id="phone-number">
-          <label for="phone-number">Phone number</label>
+          <input class="input-field" type="tel" name="tel_number" maxlength="16" id="phone-number">
+          <label class="phone-number-label" for="phone-number">Phone number</label>
         </div>
         <div class="user-info">
-          <input type="email" name="email" maxlength="255" id="email">
-          <label for="email">Email</label>
+          <input class="input-field" type="email" name="email" maxlength="255" id="email">
+          <label class="email-label" for="email">Email</label>
         </div>
       </div>
       <div class="subscribing-type-container">
@@ -65,6 +65,7 @@
       </p> -->
     <!-- <%} %> -->
   </div>
+  <script src="../../js/subscription-page/animations/subscription.js"></script>
 </body>
 
 </html>
