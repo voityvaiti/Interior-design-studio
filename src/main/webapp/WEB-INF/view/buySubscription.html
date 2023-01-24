@@ -19,20 +19,20 @@
       </div>
       <div class="user-info-container">
         <div class="user-info">
-          <p>First name: </p>
-          <input type="text" name="first_name" maxlength="20" />
+          <input type="text" name="first_name" maxlength="20" id="first-name" />
+          <label for="first-name">First name</label>
         </div>
         <div class="user-info">
-          <p>Last name: </p>
-          <input type="text" name="last_name" maxlength="20" />
+          <input type="text" name="last_name" maxlength="20" id="last-name" />
+          <label for="last-name">Last name</label>
         </div>
         <div class="user-info">
-          <p>Phone number: </p>
-          <input type="tel" name="tel_number" maxlength="16">
+          <input type="tel" name="tel_number" maxlength="16" id="phone-number">
+          <label for="phone-number">Phone number</label>
         </div>
         <div class="user-info">
-          <p>Email: </p>
-          <input type="email" name="email" maxlength="255">
+          <input type="email" name="email" maxlength="255" id="email">
+          <label for="email">Email</label>
         </div>
       </div>
       <div class="subscribing-type-container">
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="subscribe-button-container">
-        <input type="submit" value="Subscribe">
+        <input type="submit" value="SUBSCRIBE">
       </div>
     </form>
     <!-- <%if (session.getAttribute("subscriptionErrorMessage") !=null) { %>

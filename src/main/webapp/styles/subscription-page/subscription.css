@@ -36,15 +36,10 @@ p, label {
   font-size: 14px;
 }
 
-label {
-  margin-left: 5px;
-}
-
 input {
-  text-align: center;
+  border: none;
+  border-bottom: 2px solid #d3a265 !important;
   font-size: 14px;
-  border: 2px solid #d3a265;
-  border-radius: 10px;
 }
 input:focus {
   outline: none;
@@ -66,18 +61,27 @@ input:focus {
   background-color: #fff;
   border-radius: 20px;
   padding: 30px 10px;
+  box-shadow: 8px 8px 16px #ab8352, -8px -8px 16px #fbc178;
 }
 
 .user-info-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.user-info-container input {
+  height: 30px;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 5px 0px;
+  position: relative;
+  margin-top: 15px;
+}
+.user-info label {
+  position: absolute;
+  left: 0;
 }
 
 .subscribing-type-container,
@@ -87,10 +91,18 @@ input:focus {
   justify-content: space-between;
 }
 
+.subscribing-type label {
+  margin-left: 5px;
+}
+
 .term-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.term-input-container input {
+  text-align: center;
 }
 
 .subscribe-button-container {
