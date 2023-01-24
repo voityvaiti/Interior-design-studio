@@ -43,6 +43,19 @@ input:focus {
   outline: none;
 }
 
+.return-link {
+  position: absolute;
+  top: -10%;
+  left: 0;
+}
+
+.return-button {
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
 .header-container {
   margin-bottom: 10px;
 }
@@ -56,6 +69,7 @@ input:focus {
 }
 
 .form {
+  position: relative;
   background-color: #fff;
   border-radius: 20px;
   padding: 30px 10px;

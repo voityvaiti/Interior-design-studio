@@ -45,6 +45,19 @@ input {
   }
 }
 
+.return-link {
+  position: absolute;
+  top: -10%;
+  left: 0;
+}
+
+.return-button {
+  text-align: center;
+  background-color: transparent;
+  color: $main-white;
+  border: none;
+}
+
 .header-container {
   margin-bottom: 10px;
 }
@@ -58,6 +71,7 @@ input {
 }
 
 .form {
+  position: relative;
   background-color: $main-white;
   border-radius: 20px;
   padding: 30px 10px;
