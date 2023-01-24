@@ -1,5 +1,5 @@
-@import url("../fonts/Gilroy/stylesheet.css");
-@import url("../fonts/BN-Chester/stylesheet.css");
+@import url("../../fonts/Gilroy/stylesheet.css");
+@import url("../../fonts/BN-Chester/stylesheet.css");
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 @media (min-width: 0px) {
   .navbar {
