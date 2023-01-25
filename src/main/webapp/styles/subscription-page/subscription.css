@@ -8,7 +8,8 @@
   font-size: 14px;
 }
 
-html, body {
+html,
+body {
   height: 100vh;
   width: 100vw;
 }
@@ -23,16 +24,20 @@ h1 {
   text-align: center;
   font-weight: 600;
   margin-bottom: 0;
+  cursor: default;
 }
 h1 span {
+  cursor: default;
   font-family: "BN Chester";
   color: #d3a265;
   font-size: calc(1.375rem + 1.5vw);
 }
 
-p, label {
+p,
+label {
   margin-bottom: 0;
   text-align: center;
+  cursor: default;
 }
 
 input {
@@ -47,13 +52,14 @@ input:focus {
   position: absolute;
   top: -10%;
   left: 0;
-}
-
-.return-button {
-  text-align: center;
-  background-color: transparent;
   color: #fff;
-  border: none;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+.return-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  color: #fff;
 }
 
 .header-container {
@@ -96,6 +102,9 @@ input:focus {
   left: 0;
   transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
+.user-info label:hover {
+  cursor: text;
+}
 
 .subscribing-type-container,
 .subscribing-type {
@@ -106,6 +115,10 @@ input:focus {
 
 .subscribing-type label {
   margin-left: 5px;
+}
+
+.subscribing-type * {
+  cursor: pointer;
 }
 
 .term-container {
