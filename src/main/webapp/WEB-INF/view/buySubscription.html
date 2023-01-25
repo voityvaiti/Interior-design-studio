@@ -13,9 +13,7 @@
 <body>
   <div class="form-container row px-0 mx-0">
     <form class="form col-10 col-sm-8 col-md-6 col-lg-4" name="buy_subscription" method="post" action="subscribing">
-      <a class="return-link" href="#">
-        <button class="return-button">← Back</button>
-      </a>
+      <p class="return-link">← Back</p>
       <div class="header-container">
         <h1>Buy <span>Subscription</span></h1>
         <p>Please, fill in the fields</p>
@@ -59,7 +57,7 @@
         </div>
       </div>
       <div class="subscribe-button-container">
-        <input type="submit" value="SUBSCRIBE">
+        <input class="submit-button" type="submit" value="SUBSCRIBE">
       </div>
     </form>
     <!-- <%if (session.getAttribute("subscriptionErrorMessage") !=null) { %>
@@ -68,7 +66,9 @@
       </p> -->
     <!-- <%} %> -->
   </div>
-  <script src="js/subscription-page/animations/subscription.js"></script>
+  <script type="module" src="js/subscription-page/animations/subscription.js"></script>
+  <script type="module" src="js/subscription-page/helpers/saveUserInfo.js"></script>
+  <script src="js/subscription-page/helpers/returnLink.js"></script>
 </body>
 
 </html>

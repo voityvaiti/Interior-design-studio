@@ -211,6 +211,9 @@
   .active button {
     border-top: 1px solid #fff !important;
   }
+  .redirect {
+    width: 100%;
+  }
   .testimonials-section .section-header {
     margin: 60px 0px;
   }
@@ -645,6 +648,11 @@
     border: 2px solid #d3a265 !important;
     background-color: #fff;
   }
+  .redirect {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
   .carousel {
     height: 500px;
   }
@@ -991,7 +999,7 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid #d3a265;
 }
 
-.redirect-to-order-page {
+.redirect {
   text-decoration: none !important;
 }
 
