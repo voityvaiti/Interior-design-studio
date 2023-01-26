@@ -3,6 +3,9 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 16px;
 }
 
 html,
@@ -27,7 +30,6 @@ h3 {
 
 h1 {
   margin: 30px 0px 0px;
-  font-size: 32px !important;
   text-align: center;
 }
 h1 span {
@@ -43,17 +45,49 @@ h3 span {
   color: #d3a265;
 }
 
+.return-link {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+.return-link:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80%;
-  width: 70%;
-  padding: 15px;
+  position: relative;
+  padding: 30px 10px;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 8px 8px 16px #ab8352, -8px -8px 16px #fbc178;
+}
+
+.header-container h1 span {
+  font-family: "BN Chester";
+  font-size: calc(1.375rem + 1.5vw);
+}
+.header-container p {
+  text-align: center;
+}
+.header-container p span {
+  color: #d3a265;
 }
 
 .form-name-container,
@@ -75,29 +109,18 @@ h3 span {
   position: absolute;
   left: 0;
   transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
   color: #161616;
-  font-size: 16px;
-  font-family: "Gilroy";
-  font-weight: 600;
 }
 
 .input-field {
-  border: 1px solid #d3a265;
+  border-bottom: 2px solid #d3a265 !important;
   height: 24px;
   width: 100%;
   padding: 0;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border: none;
   margin: 30px 0px !important;
   background-color: transparent;
   position: relative;
-  font-size: 16px;
-  font-family: "Gilroy";
-  font-weight: 600;
 }
 .input-field:focus {
   outline: none;
@@ -118,10 +141,7 @@ h3 span {
   border: 2px solid #d3a265;
   border-radius: 10px;
   background-color: transparent;
-  margin: 30px 0px !important;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: "Gilroy";
+  margin-top: 30px !important;
 }
 
 .flag-container {

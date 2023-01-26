@@ -1,8 +1,10 @@
-const nameInput = document.getElementById("name");
-const numberInput = document.getElementById("number");
-const nameLabel1 = document.querySelector(".name-label");
-const numberLabel1 = document.querySelector(".number-label");
-const submitButton = document.querySelector(".submit-button");
+import {
+  orderCallNameLabel,
+  orderCallNumberLabel,
+  nameInput,
+  numberInput,
+  submitButton,
+} from "./variables.js";
 
 submitButton.addEventListener("click", setUserInfo);
 
@@ -19,14 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
     nameInput.value = savedName;
     numberInput.value = savedNumber;
     if (nameInput.value != "") {
-      nameLabel1.style.transform = "translateY(-20px)";
-      nameLabel1.style.fontSize = "14px";
+      orderCallNameLabel.style.transform = "translateY(-20px)";
+      orderCallNameLabel.style.fontSize = "14px";
     }
     if (numberInput.value != "") {
-      numberLabel1.style.transform = "translateY(-20px)";
-      numberLabel1.style.fontSize = "14px";
+      orderCallNumberLabel.style.transform = "translateY(-20px)";
+      orderCallNumberLabel.style.fontSize = "14px";
       flagContainer.style.opacity = "1";
-      inputFields[1].classList.add("reveal-placeholder");
     }
   }
   console.log(localStorage);

@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     inputFields[i].addEventListener("focus", (event) => {
       if (event.currentTarget === inputFields[i]) {
         labels[i].style.transform = "translateY(-20px)";
-        labels[i].style.fontSize = "12px";
+        labels[i].style.fontSize = "14px";
       }
     });
     inputFields[i].addEventListener("blur", () => {
       if (inputFields[i].value === "") {
         labels[i].style.transform = "translateY(0px)";
-        labels[i].style.fontSize = "14px";
+        labels[i].style.fontSize = "16px";
       }
     });
     inputFields[i].addEventListener('keydown', (event) => {
