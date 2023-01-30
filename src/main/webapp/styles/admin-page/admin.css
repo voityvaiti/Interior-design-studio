@@ -1,0 +1,83 @@
+@import "../../fonts/BN-Chester/stylesheet.css";
+@import "../../fonts/Gilroy/stylesheet.css";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 16px;
+  cursor: default;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  background-color: #d3a265;
+}
+
+h1 {
+  font-family: "BN Chester";
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+h1 span {
+  font-family: "BN Chester";
+  color: #d3a265;
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+h5 {
+  font-weight: 600;
+}
+
+a {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+a:hover {
+  transform: scale(1.1);
+}
+
+p {
+  margin-bottom: 25px;
+}
+
+.outer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px 10px;
+  box-shadow: 8px 8px 16px #ab8352, -8px -8px 16px #fbc178;
+}
+
+.links-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.list-button {
+  height: 40px;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #d3a265;
+  border-radius: 10px;
+  padding: 0px 10px;
+}/*# sourceMappingURL=admin.css.map */
