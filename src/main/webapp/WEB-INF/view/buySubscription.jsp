@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,12 +14,10 @@
 <body>
 <div class="form-container row px-0 mx-0">
     <form class="form col-10 col-sm-8 col-md-6 col-lg-4" name="buy_subscription" method="post" action="subscribing">
-        <a class="return-link" href="<%=request.getContextPath()%>/">
-            <button class="return-button">← Back</button>
-        </a>
+        <a href="<%=request.getContextPath()%>/" class="return-link">← Back</a>
         <div class="header-container">
             <h1>Buy <span>Subscription</span></h1>
-            <p>Please, fill in the fields</p>
+            <p>Please <span>fill in the fields</span> and we will call you back to <span>confirm the order</span></p>
         </div>
         <div class="user-info-container">
             <div class="user-info">
@@ -60,7 +59,7 @@
             </div>
         </div>
         <div class="subscribe-button-container">
-            <input type="submit" value="SUBSCRIBE">
+            <input class="submit-button" type="submit" value="SUBSCRIBE">
         </div>
         <%if (session.getAttribute("subscriptionErrorMessage") !=null) { %>
         <p style="color:red">
@@ -69,7 +68,8 @@
         <%} %>
     </form>
 </div>
-<script src="js/subscription-page/animations/subscription.js"></script>
+<script type="module" src="js/subscription-page/animations/subscription.js"></script>
+<script type="module" src="js/subscription-page/helpers/saveUserInfo.js"></script>
 </body>
 
 </html>
