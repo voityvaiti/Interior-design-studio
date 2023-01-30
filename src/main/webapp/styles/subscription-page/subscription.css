@@ -5,7 +5,7 @@
   padding: 0;
   font-family: "Gilroy";
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 html,
@@ -64,6 +64,9 @@ input:focus {
 
 .header-container {
   margin-bottom: 10px;
+}
+.header-container p span {
+  color: #d3a265;
 }
 
 .form-container {
@@ -141,9 +144,10 @@ input:focus {
   background-color: #fff;
   border: 2px solid #d3a265;
   border-radius: 10px;
+  margin-top: 30px;
 }
 
 .subscribing-type-container,
 .term-container {
-  margin: 10px 0px;
+  margin-top: 10px;
 }/*# sourceMappingURL=subscription.css.map */

@@ -12,33 +12,38 @@
 </head>
 
 <body>
-	<form class="form" name="orderCall" method="post" action="order">
-		<h1 class="order-a-call-header">Order a <span>Call</span></h1>
-		<h3 class="fill-the-fields">Please <span>fill in the fields </span>and<br> we will call you back <br> within
-			<span>30 seconds!</span>
-		</h3>
-		<div class="form-input-container row mx-0">
-			<div class="form-name-container col-12 px-0">
-				<input class="input-field" type="text" value="" id="name" />
-				<label class="name-label" for="name">Name</label>
+	<div class="form-container row px-0 mx-0">
+		<form class="form col-10 col-sm-8 col-md-6 col-lg-4" name="orderCall" method="post" action="order">
+			<a href="index.html" class="return-link">← Back</a>
+			<div class="header-container">
+				<h1 class="order-a-call-header">Order a <span>Call</span></h1>
+				<p class="fill-the-fields">Please <span>fill in the fields </span>and<br> we will call you back <br> within
+					<span>30 seconds!</span>
 			</div>
-			<div class="form-phone-number-container col-12 px-0">
-				<input class="input-field number-input" type="tel" value="" id="number" />
-				<label class="number-label" for="number"> Phone number</label>
-				<span id="valid-message" class="hide">✓ Valid</span>
-				<span id="error-message" class="hide">Invalid number</span>
+			</>
+			<div class="form-input-container row mx-0">
+				<div class="form-name-container col-12 px-0">
+					<input class="input-field" type="text" value="" id="name" />
+					<label class="order-call-name-label" for="name">Name</label>
+				</div>
+				<div class="form-phone-number-container col-12 px-0">
+					<input class="input-field number-input" type="tel" value="" id="number" />
+					<label class="order-call-number-label" for="number"> Phone number</label>
+					<span id="valid-message" class="hide">✓ Valid</span>
+					<span id="error-message" class="hide">Invalid number</span>
+				</div>
+				<div class="submit-button-container col-12 px-0">
+					<button class="submit-button" type="submit">SUBMIT</button>
+				</div>
 			</div>
-			<div class="submit-button-container col-12 px-0">
-				<button class="submit-button" type="submit">SUBMIT</button>
-			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 	
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
 		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/6.4.1/js/intlTelInput.min.js"></script>
-	<script src="js/order-call-page/animations/orderCall.js" defer></script>
-	<script src="js/order-call-page/helpers/saveUserInfo.js"></script>
+	<script type="module" src="js/order-call-page/animations/orderCall.js" defer></script>
+	<script type="module" src="js/order-call-page/helpers/saveUserInfo.js"></script>
 </body>
 
 </html>
