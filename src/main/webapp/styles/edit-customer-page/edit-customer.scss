@@ -1,0 +1,122 @@
+@import url("../../fonts/Gilroy/stylesheet.css");
+@import url("../../fonts/BN-Chester/stylesheet.css");
+@import "../helpers/variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-orange !important;
+}
+
+h1 {
+  font-family: "BN Chester";
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0;
+  cursor: default;
+  span {
+    cursor: default;
+    font-family: "BN Chester";
+    color: $main-orange;
+    font-size: calc(1.375rem + 1.5vw);
+  }
+}
+
+
+input {
+  border: none;
+  border-bottom: 2px solid $main-orange !important;
+  &:focus {
+    outline: none;
+  }
+}
+
+.return-link {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  color: $main-white;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    color: $main-white;
+  }
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 30px 10px;
+  background-color: $main-white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px #ab8352, -8px -8px 16px #fbc178;
+}
+
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  input {
+    height: 30px;
+  }
+}
+
+.user-info {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  width: 70%;
+  justify-content: space-between;
+  label {
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    &:hover {
+      cursor: text;
+    }
+  }
+}
+
+.submit-button {
+  height: 40px;
+  width: 50%;
+  border: $button-border;
+  border-radius: 10px;
+  background-color: transparent;
+  margin-top: 30px !important;
+}
+
+.error-message {
+  color: red;
+  margin: 20px 0px;
+}
