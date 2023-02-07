@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subscribing</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/subscription-page/subscription.css">
+    <link rel="stylesheet" href="styles/buy-subscription-page/buy-subscription.css">
 </head>
 
 <body>
@@ -68,8 +68,8 @@
         <%} %>
     </form>
 </div>
-<script type="module" src="js/subscription-page/animations/subscription.js"></script>
-<script type="module" src="js/subscription-page/helpers/saveUserInfo.js"></script>
+<script type="module" src="js/buy-subscription-page/animations/buySubscription.js"></script>
+<script type="module" src="js/buy-subscription-page/helpers/saveUserInfo.js"></script>
 </body>
 
 </html>
