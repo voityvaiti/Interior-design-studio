@@ -16,7 +16,7 @@ Web App, realising functions of business card site:
 - Apache Tomcat
 - Hibernate Validator
 
-### Frontend(by [DmitriyTruten](https://github.com/DmitriyTruten)):
+### Frontend(by [DmytroTruten](https://github.com/DmytroTruten)):
 - Adaptive/Semantic layout
 - Animations
 
