@@ -18,8 +18,8 @@ Web App, realising functions of business card site.
        4. end_date DATE
     3. call_orders:
        1. customer_id INT
-4. Set driver for your SQL server in DatabaseConnector class (default - MySQL driver).
-5. In ```src/main/resources``` folder create db.properties file and set ```URL```, ```USERNAME``` and ```PASSWORD``` properties for your SQL server.
+4. Set driver for your SQL server in ```com.myproject.idstudio.service.DatabaseConnector``` class (default - MySQL driver).
+5. In ```src/main/resources``` folder create ```db.properties``` file and set ```URL```, ```USERNAME``` and ```PASSWORD``` properties for your SQL server.
 6. Open ```tomcat_users.xml``` file, (default path: ```$CATALINA_HOME\conf\tomcat-users```) and add there at least one user with role ```admin```.
 7. Start project in Tomcat Server.
 8. To access the admin panel open ```/admin``` URL. To verify as admin, use credentials of user, created in ```tomcat_users.xml```.
